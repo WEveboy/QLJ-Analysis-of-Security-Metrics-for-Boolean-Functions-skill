@@ -1,0 +1,2 @@
+# Preserve compiler-recorded byte hashes across checkouts.
+* -text
