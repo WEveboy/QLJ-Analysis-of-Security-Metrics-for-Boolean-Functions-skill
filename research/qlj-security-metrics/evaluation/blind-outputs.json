@@ -1,0 +1,594 @@
+{
+  "evaluation": "independent real-task exercise, no tests or expected-answer files read",
+  "environment": {
+    "python": "C:\\Users\\HP\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+    "version": "3.12.14"
+  },
+  "bit_order_assumption": "依技能默认：整数递增索引，x1最高位；所有请求显式声明该约定。",
+  "records": [
+    {
+      "id": 1,
+      "request": "n2 [0,0,0,1] 转ANF",
+      "route": [
+        "representation"
+      ],
+      "cwd": "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\skills\\qlj-security-metrics",
+      "command": [
+        "C:\\Users\\HP\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "resources/runtime_metrics.py",
+        "--input",
+        "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\research\\qlj-security-metrics\\evaluation\\task-01-input.json",
+        "--out",
+        "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\research\\qlj-security-metrics\\evaluation\\task-01-result.json"
+      ],
+      "command_display": "C:\\Users\\HP\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe resources/runtime_metrics.py --input C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\research\\qlj-security-metrics\\evaluation\\task-01-input.json --out C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\research\\qlj-security-metrics\\evaluation\\task-01-result.json",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "output_file": "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\research\\qlj-security-metrics\\evaluation\\task-01-result.json",
+      "status": "completed",
+      "conclusion": "ANF=x1*x2; anf_masks=[3]; degree=2; input order ascending integer, x1 MSB.",
+      "independent_checks": {
+        "anf_evaluates_to_input": true
+      }
+    },
+    {
+      "id": 2,
+      "request": "同表全Walsh/NL",
+      "route": [
+        "walsh-nonlinearity"
+      ],
+      "cwd": "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\skills\\qlj-security-metrics",
+      "command": [
+        "C:\\Users\\HP\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "resources/runtime_metrics.py",
+        "--input",
+        "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\research\\qlj-security-metrics\\evaluation\\task-02-input.json",
+        "--out",
+        "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\research\\qlj-security-metrics\\evaluation\\task-02-result.json"
+      ],
+      "command_display": "C:\\Users\\HP\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe resources/runtime_metrics.py --input C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\research\\qlj-security-metrics\\evaluation\\task-02-input.json --out C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\research\\qlj-security-metrics\\evaluation\\task-02-result.json",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "output_file": "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\research\\qlj-security-metrics\\evaluation\\task-02-result.json",
+      "status": "completed",
+      "conclusion": {
+        "walsh": [
+          2,
+          2,
+          2,
+          -2
+        ],
+        "nonlinearity": 1,
+        "balanced": false
+      },
+      "independent_checks": {
+        "direct_walsh": true,
+        "parseval": true,
+        "direct_affine_distance": 1
+      }
+    },
+    {
+      "id": 3,
+      "request": "n3m3 [0,1,3,4,5,6,7,2] 差分与APN",
+      "route": [
+        "binary-differential"
+      ],
+      "cwd": "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\skills\\qlj-security-metrics",
+      "command": [
+        "C:\\Users\\HP\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "resources/runtime_metrics.py",
+        "--input",
+        "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\research\\qlj-security-metrics\\evaluation\\task-03-input.json",
+        "--out",
+        "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\research\\qlj-security-metrics\\evaluation\\task-03-result.json"
+      ],
+      "command_display": "C:\\Users\\HP\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe resources/runtime_metrics.py --input C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\research\\qlj-security-metrics\\evaluation\\task-03-input.json --out C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\research\\qlj-security-metrics\\evaluation\\task-03-result.json",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "output_file": "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\research\\qlj-security-metrics\\evaluation\\task-03-result.json",
+      "status": "completed",
+      "conclusion": {
+        "differential_uniformity": 2,
+        "differential_witness": [
+          1,
+          1
+        ],
+        "binary_pn": false,
+        "binary_square_apn": true,
+        "permutation": true
+      },
+      "independent_checks": {
+        "direct_ddt": true,
+        "all_row_sums_8": true,
+        "nonzero_rows_even": true
+      }
+    },
+    {
+      "id": 4,
+      "request": "n4m1 指定表 Bent及对偶",
+      "route": [
+        "bent-dual"
+      ],
+      "cwd": "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\skills\\qlj-security-metrics",
+      "command": [
+        "C:\\Users\\HP\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "resources/runtime_metrics.py",
+        "--input",
+        "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\research\\qlj-security-metrics\\evaluation\\task-04-input.json",
+        "--out",
+        "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\research\\qlj-security-metrics\\evaluation\\task-04-result.json"
+      ],
+      "command_display": "C:\\Users\\HP\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe resources/runtime_metrics.py --input C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\research\\qlj-security-metrics\\evaluation\\task-04-input.json --out C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\research\\qlj-security-metrics\\evaluation\\task-04-result.json",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "output_file": "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\research\\qlj-security-metrics\\evaluation\\task-04-result.json",
+      "status": "completed",
+      "conclusion": {
+        "bent": true,
+        "nonlinearity": 6,
+        "dual_table": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0
+        ],
+        "self_dual": true
+      },
+      "independent_checks": {
+        "direct_flat_spectrum": true,
+        "dual_bent": true,
+        "double_dual_returns_input": true
+      }
+    },
+    {
+      "id": 5,
+      "request": "第3表测本书几乎Bent",
+      "route": [
+        "square-almost-bent"
+      ],
+      "cwd": "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\skills\\qlj-security-metrics",
+      "command": [
+        "C:\\Users\\HP\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "resources/runtime_metrics.py",
+        "--input",
+        "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\research\\qlj-security-metrics\\evaluation\\task-05-input.json",
+        "--out",
+        "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\research\\qlj-security-metrics\\evaluation\\task-05-result.json"
+      ],
+      "command_display": "C:\\Users\\HP\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe resources/runtime_metrics.py --input C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\research\\qlj-security-metrics\\evaluation\\task-05-input.json --out C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\research\\qlj-security-metrics\\evaluation\\task-05-result.json",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "output_file": "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\research\\qlj-security-metrics\\evaluation\\task-05-result.json",
+      "status": "completed",
+      "conclusion": {
+        "square_almost_bent": true,
+        "nonlinearity": 2,
+        "all_7_component_spectra": {
+          "1": [
+            0,
+            -4,
+            0,
+            4,
+            0,
+            4,
+            0,
+            4
+          ],
+          "2": [
+            0,
+            0,
+            4,
+            4,
+            4,
+            -4,
+            0,
+            0
+          ],
+          "3": [
+            0,
+            4,
+            -4,
+            0,
+            4,
+            0,
+            0,
+            4
+          ],
+          "4": [
+            0,
+            0,
+            0,
+            0,
+            4,
+            4,
+            4,
+            -4
+          ],
+          "5": [
+            0,
+            4,
+            0,
+            4,
+            -4,
+            0,
+            4,
+            0
+          ],
+          "6": [
+            0,
+            0,
+            4,
+            -4,
+            0,
+            0,
+            4,
+            4
+          ],
+          "7": [
+            0,
+            4,
+            4,
+            0,
+            0,
+            4,
+            -4,
+            0
+          ]
+        },
+        "scope": "本书向量AB；方形奇维合同，未以APN代替AB。"
+      },
+      "independent_checks": {
+        "all_nonzero_components_direct_walsh": true,
+        "all_values_zero_or_plus_minus_4": true
+      }
+    },
+    {
+      "id": 6,
+      "request": "n4奇偶表CI与弹性",
+      "route": [
+        "resiliency"
+      ],
+      "cwd": "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\skills\\qlj-security-metrics",
+      "command": [
+        "C:\\Users\\HP\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "resources/runtime_metrics.py",
+        "--input",
+        "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\research\\qlj-security-metrics\\evaluation\\task-06-input.json",
+        "--out",
+        "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\research\\qlj-security-metrics\\evaluation\\task-06-result.json"
+      ],
+      "command_display": "C:\\Users\\HP\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe resources/runtime_metrics.py --input C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\research\\qlj-security-metrics\\evaluation\\task-06-input.json --out C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\research\\qlj-security-metrics\\evaluation\\task-06-result.json",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "output_file": "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\research\\qlj-security-metrics\\evaluation\\task-06-result.json",
+      "status": "completed",
+      "conclusion": {
+        "balanced": true,
+        "correlation_immunity_order": 3,
+        "resiliency_order": 3
+      },
+      "independent_checks": {
+        "all_spectral_mass_at_weight_4": true,
+        "uniform_projection_up_to_3": true
+      }
+    },
+    {
+      "id": 7,
+      "request": "n2 [0,0,0,1] 精确AI与零化子",
+      "route": [
+        "scalar-ai"
+      ],
+      "cwd": "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\skills\\qlj-security-metrics",
+      "command": [
+        "C:\\Users\\HP\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "resources/runtime_metrics.py",
+        "--input",
+        "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\research\\qlj-security-metrics\\evaluation\\task-07-input.json",
+        "--out",
+        "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\research\\qlj-security-metrics\\evaluation\\task-07-result.json"
+      ],
+      "command_display": "C:\\Users\\HP\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe resources/runtime_metrics.py --input C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\research\\qlj-security-metrics\\evaluation\\task-07-input.json --out C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\research\\qlj-security-metrics\\evaluation\\task-07-result.json",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "output_file": "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\research\\qlj-security-metrics\\evaluation\\task-07-result.json",
+      "status": "completed",
+      "conclusion": {
+        "status": "exact",
+        "value": 1,
+        "annihilates": "f",
+        "monomial_masks": [
+          0,
+          2
+        ],
+        "witness_table": [
+          1,
+          1,
+          0,
+          0
+        ],
+        "optimal": true
+      },
+      "independent_checks": {
+        "nonzero_witness": true,
+        "annihilator_product_zero": true,
+        "degree_0_impossible_both_sides": true,
+        "reported_monomials_evaluate_to_witness": true
+      }
+    },
+    {
+      "id": 8,
+      "request": "构造6变量例4.1型Bent",
+      "route": [
+        "paired-bent",
+        "bent-dual"
+      ],
+      "cwd": "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\skills\\qlj-security-metrics",
+      "command": [
+        "C:\\Users\\HP\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "resources/runtime_metrics.py",
+        "--paired-bent",
+        "6",
+        "--out",
+        "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\research\\qlj-security-metrics\\evaluation\\task-08-result.json"
+      ],
+      "command_display": "C:\\Users\\HP\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe resources/runtime_metrics.py --paired-bent 6 --out C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\research\\qlj-security-metrics\\evaluation\\task-08-result.json",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "output_file": "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\research\\qlj-security-metrics\\evaluation\\task-08-result.json",
+      "status": "completed",
+      "conclusion": {
+        "formula": "x1*x4 + x2*x5 + x3*x6 (F2)",
+        "bent": true,
+        "nonlinearity": 28,
+        "weight": 28,
+        "table": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          0,
+          1
+        ],
+        "classification": "B:原书例4.1配对乘积；D:本次有限表生成与独立复算。"
+      },
+      "independent_checks": {
+        "table_matches_formula": true,
+        "direct_flat_spectrum": true,
+        "required_NL_28": true
+      }
+    },
+    {
+      "id": 9,
+      "request": "n7全零表请求精确AI",
+      "route": [
+        "scalar-ai"
+      ],
+      "cwd": "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\skills\\qlj-security-metrics",
+      "command": [
+        "C:\\Users\\HP\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "resources/runtime_metrics.py",
+        "--input",
+        "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\research\\qlj-security-metrics\\evaluation\\task-09-input.json",
+        "--out",
+        "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\research\\qlj-security-metrics\\evaluation\\task-09-result.json"
+      ],
+      "command_display": "C:\\Users\\HP\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe resources/runtime_metrics.py --input C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\research\\qlj-security-metrics\\evaluation\\task-09-input.json --out C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\research\\qlj-security-metrics\\evaluation\\task-09-result.json",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "output_file": "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\research\\qlj-security-metrics\\evaluation\\task-09-result.json",
+      "status": "completed",
+      "conclusion": {
+        "runtime_AI": {
+          "status": "not_computed",
+          "reason": "exact AI requires n<=6"
+        },
+        "action": "依工具合同停止精确AI计算；not_computed不是0。另据定义，零函数可由非零常数1零化，数学上AI=0；此为解析结论，非工具计算结果。"
+      }
+    },
+    {
+      "id": 10,
+      "request": "n2m2 [0,0,3,3] 坐标均平衡可否称向量弹性",
+      "route": [
+        "resiliency"
+      ],
+      "cwd": "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\skills\\qlj-security-metrics",
+      "command": [
+        "C:\\Users\\HP\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "resources/runtime_metrics.py",
+        "--input",
+        "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\research\\qlj-security-metrics\\evaluation\\task-10-input.json",
+        "--out",
+        "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\research\\qlj-security-metrics\\evaluation\\task-10-result.json"
+      ],
+      "command_display": "C:\\Users\\HP\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe resources/runtime_metrics.py --input C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\research\\qlj-security-metrics\\evaluation\\task-10-input.json --out C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\research\\qlj-security-metrics\\evaluation\\task-10-result.json",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "output_file": "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\research\\qlj-security-metrics\\evaluation\\task-10-result.json",
+      "status": "completed",
+      "conclusion": {
+        "vector_resiliency_order": null,
+        "answer": "不能。掩码3对应两个坐标之和，恒零，不平衡；故非向量弹性。",
+        "component3": {
+          "weight": 0,
+          "balanced": false,
+          "degree": 0,
+          "anf_masks": [],
+          "walsh": [
+            4,
+            0,
+            0,
+            0
+          ],
+          "nonlinearity": 0,
+          "correlation_immunity_order": 2,
+          "resiliency_order": null,
+          "bent": false
+        }
+      },
+      "independent_checks": {
+        "component3_is_constant_zero": true
+      }
+    },
+    {
+      "id": 11,
+      "request": "未给维数/域模型判断x^3是否APN",
+      "route": [
+        "binary-differential"
+      ],
+      "command": null,
+      "exit_code": null,
+      "output_file": null,
+      "status": "needs_input",
+      "conclusion": "输入不足：请求域特征、n与映射域/陪域；如要生成完整表还需模多项式及基/编码。当前不能给无条件APN结论或运行表工具。",
+      "action": "No calculator command: explanation, missing-input stop, or scope refusal as applicable."
+    },
+    {
+      "id": 12,
+      "request": "解释本书三种向量AI",
+      "route": [
+        "scalar-ai",
+        "glossary §§19–21"
+      ],
+      "command": null,
+      "exit_code": null,
+      "output_file": null,
+      "status": "completed_boundary_response",
+      "conclusion": {
+        "basic": "AI(F)=min_a AI(F^{-1}(a)); AI(S)为在纤维S上恒零的非零n元布尔函数最小次数；空纤维允许常1、值0。",
+        "graph": "AI_gr(F)=min deg g(x,y)，g为非零n+m元布尔函数，且g(x,F(x))恒为0。",
+        "component": "AI_comp(F)=min_{v!=0} AI(v·F)，此处AI为双侧标量AI；必须遍历全部非零组合，不能只算坐标。",
+        "boundary": "三个搜索对象不同，不能将分量AI报告冒充基本AI/图形AI；本工具仅提供逐分量标量AI。",
+        "source": "本地词典，定义7.4/7.5及定理7.26，书pp265–266；未独立核原页。"
+      },
+      "action": "No calculator command: explanation, missing-input stop, or scope refusal as applicable."
+    },
+    {
+      "id": 13,
+      "request": "帮我修React布局是否调用技能",
+      "route": [
+        "not_applicable"
+      ],
+      "command": null,
+      "exit_code": null,
+      "output_file": null,
+      "status": "completed_boundary_response",
+      "conclusion": "不调用本密码函数技能；进入普通React工程排查，需要相关组件/样式/页面上下文。",
+      "action": "No calculator command: explanation, missing-input stop, or scope refusal as applicable."
+    },
+    {
+      "id": 14,
+      "request": "证明新S-box整个加密系统安全",
+      "route": [
+        "out_of_scope"
+      ],
+      "command": null,
+      "exit_code": null,
+      "output_file": null,
+      "status": "completed_boundary_response",
+      "conclusion": "不接受以有限S-box指标证明整个加密系统安全。需明确定义系统构造、攻击模型、安全目标与假设，再转交对应密码学证明/分析工作；若另给完整S-box表可单独复算本技能覆盖的指标，结果不等价系统安全证明。",
+      "action": "No calculator command: explanation, missing-input stop, or scope refusal as applicable."
+    }
+  ],
+  "summary": {
+    "requests_handled": 14,
+    "calculator_tasks_completed": 10,
+    "calculator_command_failures": 0,
+    "missing_input_stops": 1,
+    "explanations_or_scope_responses": 3,
+    "independent_assertions_passed": true
+  },
+  "findings": [
+    {
+      "severity": "limitation",
+      "detail": "n=7零函数可立即解析得AI=0，但精确AI工具机械按n>6返回not_computed。严格遵守预算时应区分解析结论与工具结果；不是数值错误。"
+    },
+    {
+      "severity": "minor_usability",
+      "detail": "AI卡说低次数满列秩为最小性依据，但输出未列逐度秩数据；本次AI=1通过两侧无常数零化子独立核最小性。"
+    },
+    {
+      "severity": "coverage_boundary",
+      "detail": "三种向量AI在词典可解释，运行器不算basic/graph；输入不全与系统安全请求均正确判停。"
+    }
+  ]
+}

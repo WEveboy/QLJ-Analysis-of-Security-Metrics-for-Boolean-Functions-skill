@@ -1,0 +1,105 @@
+{
+  "skill": "qlj-security-metrics",
+  "version": "research-draft-0.1.0",
+  "test_cases": [
+    {
+      "id": "t01",
+      "type": "should_trigger",
+      "prompt": "n2表[0,0,0,1]转ANF",
+      "expected_behavior": "anf_masks=[3]",
+      "expected_route": "representation"
+    },
+    {
+      "id": "t02",
+      "type": "should_trigger",
+      "prompt": "同表全谱NL",
+      "expected_behavior": "walsh=[2,2,2,-2], NL1",
+      "expected_route": "walsh-nonlinearity"
+    },
+    {
+      "id": "t03",
+      "type": "should_trigger",
+      "prompt": "GF8立方表差分APN",
+      "expected_behavior": "delta2",
+      "expected_route": "binary-differential"
+    },
+    {
+      "id": "t04",
+      "type": "should_trigger",
+      "prompt": "配对乘积4变量Bent对偶",
+      "expected_behavior": "NL6, dual=table",
+      "expected_route": "bent-dual"
+    },
+    {
+      "id": "t05",
+      "type": "should_trigger",
+      "prompt": "GF8立方几乎Bent",
+      "expected_behavior": "AB true",
+      "expected_route": "square-almost-bent"
+    },
+    {
+      "id": "t06",
+      "type": "should_trigger",
+      "prompt": "4变量奇偶和CI/弹性",
+      "expected_behavior": "CI3, resilient3",
+      "expected_route": "resiliency"
+    },
+    {
+      "id": "t07",
+      "type": "should_trigger",
+      "prompt": "n2与函数AI",
+      "expected_behavior": "AI1, nonzero annihilator",
+      "expected_route": "scalar-ai"
+    },
+    {
+      "id": "t08",
+      "type": "should_trigger",
+      "prompt": "构造6变量配对Bent",
+      "expected_behavior": "NL28, bent true",
+      "expected_route": "paired-bent"
+    },
+    {
+      "id": "t09",
+      "type": "edge_case",
+      "prompt": "n7零表精确AI",
+      "expected_behavior": "not_computed",
+      "expected_route": "scalar-ai"
+    },
+    {
+      "id": "t10",
+      "type": "edge_case",
+      "prompt": "[0,0,3,3]向量弹性",
+      "expected_behavior": "null; constant component",
+      "expected_route": "resiliency"
+    },
+    {
+      "id": "t11",
+      "type": "edge_case",
+      "prompt": "x^3未给域及维数",
+      "expected_behavior": "request missing specification",
+      "expected_route": "binary-differential"
+    },
+    {
+      "id": "t12",
+      "type": "edge_case",
+      "prompt": "向量三AI定义",
+      "expected_behavior": "distinguish basic/graph/component",
+      "expected_route": "reference"
+    },
+    {
+      "id": "t13",
+      "type": "should_not_trigger",
+      "prompt": "修React布局",
+      "expected_behavior": "do not trigger",
+      "expected_route": "none"
+    },
+    {
+      "id": "t14",
+      "type": "should_not_trigger",
+      "prompt": "证明整个加密系统安全",
+      "expected_behavior": "outside proof scope",
+      "expected_route": "none"
+    }
+  ],
+  "note": "独立执行者仅收到任务，未收到本预期；该套件无模型宿主自动发现测量，不等于产品自动触发基准。"
+}

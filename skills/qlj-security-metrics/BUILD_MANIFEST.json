@@ -1,0 +1,41 @@
+{
+  "tool": "cangjie-tools v2.5.0",
+  "published_hashes": {
+    "references\\capabilities\\bent-dual.md": "2971f858117e333fe3a0be5e6b5fa03dc73f4a87e7d6833989bf40db0229d568",
+    "references\\capabilities\\binary-differential.md": "5bd5fafbebfe3d699005db468629d6cc808a31e50c6636d29f76c779655fe8c4",
+    "references\\capabilities\\paired-bent.md": "05c64759879d95a8ee845933fd3f1a91b3c1ca6a6b177d1baa415b91833d8392",
+    "references\\capabilities\\representation.md": "17e6f2bcf83cd2279556bc2a33a2486d0130004ec67423be2f0967c85061b016",
+    "references\\capabilities\\resiliency.md": "c3cac70c43135aee42d48755f9aa242e1757cdec4c02bad23f455544fdb6a87a",
+    "references\\capabilities\\scalar-ai.md": "813c9ef47748a3cdc7f79b26d2041537c3b0cf93a8a33115f78f5b04fdbd1b13",
+    "references\\capabilities\\square-almost-bent.md": "fe1871365f6915579d2d82cf7d3655a4c1bbd9cdb8000b444bcf4af16f672ac5",
+    "references\\capabilities\\walsh-nonlinearity.md": "2c69c66dec508001eb979f4dce33ddb6a77da3d74f12de848d53fbedbbc0caf4",
+    "references\\capability-index.md": "eaabd9aeae70f9ae9be054e1d506f981a75cde6708f09b4d6bdd0c5015a3f657",
+    "references\\cheatsheet.md": "9bb64077e4b16a5aa5ef6b5c3b74ad68910db3cf7c81229a20652314639a10a6",
+    "references\\glossary.md": "e003f90f7ab0bba2d627a9789cc1a6d53723af7ee7de8e81d531ed8518335cb2",
+    "references\\overview.md": "26da19e4d1a1929723f870a7a63951e0779ab7d90d1d20a89fc549820989559c",
+    "resources\\runtime_metrics.py": "9c45ff7d6d6fa4e502ff3554c1d40217939ffecf6d118b9d9c92608ab1d3c012",
+    "resources\\test_metrics.py": "459ecedb61c5f6043fbbfb08a6df2f5165c4fe2b802aeb12a483d6da52423e9d",
+    "resources\\usage.md": "c4d48dc2c546c064614e527036476c73615baa45b170b2a05c609912439a930a",
+    "SKILL.md": "70603a3155f459af7cd917db70f0153a5501f2ef3a1e5e2610e17ce750e6330a"
+  },
+  "note": "update/重编译前比对 published_hashes；检测到本地手改不得静默覆盖",
+  "bundle_id": "bundle.qlj-security-metrics",
+  "bundle_sha256": "95532957952730e51f85dd3d1beddfea4f87dac8000c79195a0beec310ff1ebe",
+  "variant": "single",
+  "run_id": "run-20261103-215356-4957f9",
+  "decision": {
+    "schema_version": 1,
+    "requested": "single",
+    "selected": "single",
+    "decision_policy": "single-first-v1",
+    "skill_budget": 2,
+    "promoted_count": 0,
+    "capability_count": 8,
+    "reasons": [
+      "用户显式选择 single，auto 决策器不覆盖用户选择"
+    ],
+    "alternative": "compact pack（1 个来源路由入口 + 0 个晋级 Skill，共 1 个可发现入口）",
+    "user_confirmed": true,
+    "preserve_strategy_on_update": true
+  }
+}

@@ -1,0 +1,15 @@
+# 参考内容映射
+
+| 任务 | 原书位置 | 候选/主题 | 判定 | 实际去向/缺口 |
+|---|---|---|---|---|
+| T04 | §1.6—1.7 pp12—18 | 迹表示、RM与码桥 | reference | 词典/overview；未实现域模型或码计算 |
+| T05/T14 | §2.2—2.5 pp27—67 | PN原像分布、构造、等价、码应用 | needs_review | 参数与证明未逐式复核，不进active |
+| T06 | §3.2—3.4 pp80—100 | APN族与EA/CCZ | needs_review | 只检测给定表；族参数和未知等价搜索未实现 |
+| T07 | §4.3—4.5 pp112—124 | MM/PS/间接构造、等价类计数 | needs_review | 仅例4.1构造激活 |
+| T08 | §5.2—5.4 pp133—144 | 一般SCV界、AB构造与等价刻画 | needs_review | 只激活方形奇维AB检测，保留(2,1)例外 |
+| T10 | §6.2—6.5 pp156—195 | 标量/向量弹性构造与计数 | needs_review | 参数与计数公式未逐式复核 |
+| T11 | §7.2—7.3 pp210—264 | 支撑/平面/交换基/对称MAI构造 | needs_review | 不从章标题补成构造程序 |
+| T12 | §7.4 pp265—270 | 基本、图形、组件三种向量AI | reference/needs_review | 定义入词典；只返回分量标量AI，不实现三个向量AI |
+| T13 | §2.4/3.4/4.5 | EA/CCZ/仿射等价 | reference | 谱相同不能给等价证书；Bent章节仿射口径另列词典 |
+
+参考最终进入skills/qlj-security-metrics/references/overview.md与glossary.md。待审条目在overview显式披露，不把其标题当公式实现。

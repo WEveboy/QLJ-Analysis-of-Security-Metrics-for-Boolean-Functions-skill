@@ -1,0 +1,436 @@
+{
+  "convention": "Input masks and component masks ordered numerically; x_0 is LSB.",
+  "A": {
+    "n": 2,
+    "truth": [
+      0,
+      0,
+      0,
+      1
+    ],
+    "anf_coefficients": [
+      0,
+      0,
+      0,
+      1
+    ],
+    "anf_masks": [
+      3
+    ],
+    "anf_text": "x_0*x_1",
+    "walsh": [
+      2,
+      2,
+      2,
+      -2
+    ],
+    "nonlinearity": 1,
+    "algebraic_immunity": 1,
+    "minimum_degree_annihilators": [
+      {
+        "degree": 1,
+        "annihilates": "f",
+        "truth": [
+          0,
+          1,
+          1,
+          0
+        ],
+        "anf_masks": [
+          1,
+          2
+        ]
+      },
+      {
+        "degree": 1,
+        "annihilates": "f",
+        "truth": [
+          1,
+          0,
+          1,
+          0
+        ],
+        "anf_masks": [
+          0,
+          1
+        ]
+      },
+      {
+        "degree": 1,
+        "annihilates": "f",
+        "truth": [
+          1,
+          1,
+          0,
+          0
+        ],
+        "anf_masks": [
+          0,
+          2
+        ]
+      }
+    ]
+  },
+  "B": {
+    "delta": 2,
+    "ddt": [
+      [
+        8,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        2,
+        0,
+        2,
+        0,
+        2,
+        0,
+        2
+      ],
+      [
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        0,
+        0
+      ],
+      [
+        0,
+        2,
+        2,
+        0,
+        2,
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2
+      ],
+      [
+        0,
+        2,
+        0,
+        2,
+        2,
+        0,
+        2,
+        0
+      ],
+      [
+        0,
+        0,
+        2,
+        2,
+        0,
+        0,
+        2,
+        2
+      ],
+      [
+        0,
+        2,
+        2,
+        0,
+        0,
+        2,
+        2,
+        0
+      ]
+    ],
+    "nonlinearity": 2,
+    "almost_bent_square_odd": true,
+    "components": {
+      "1": {
+        "truth": [
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "walsh": [
+          0,
+          -4,
+          0,
+          4,
+          0,
+          4,
+          0,
+          4
+        ],
+        "nonlinearity": 2
+      },
+      "2": {
+        "truth": [
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          1,
+          1
+        ],
+        "walsh": [
+          0,
+          0,
+          4,
+          4,
+          4,
+          -4,
+          0,
+          0
+        ],
+        "nonlinearity": 2
+      },
+      "3": {
+        "truth": [
+          0,
+          1,
+          0,
+          0,
+          1,
+          1,
+          0,
+          1
+        ],
+        "walsh": [
+          0,
+          4,
+          -4,
+          0,
+          4,
+          0,
+          0,
+          4
+        ],
+        "nonlinearity": 2
+      },
+      "4": {
+        "truth": [
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        "walsh": [
+          0,
+          0,
+          0,
+          0,
+          4,
+          4,
+          4,
+          -4
+        ],
+        "nonlinearity": 2
+      },
+      "5": {
+        "truth": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1,
+          0,
+          0
+        ],
+        "walsh": [
+          0,
+          4,
+          0,
+          4,
+          -4,
+          0,
+          4,
+          0
+        ],
+        "nonlinearity": 2
+      },
+      "6": {
+        "truth": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          0,
+          0,
+          1
+        ],
+        "walsh": [
+          0,
+          0,
+          4,
+          -4,
+          0,
+          0,
+          4,
+          4
+        ],
+        "nonlinearity": 2
+      },
+      "7": {
+        "truth": [
+          0,
+          1,
+          0,
+          1,
+          0,
+          0,
+          1,
+          1
+        ],
+        "walsh": [
+          0,
+          4,
+          4,
+          0,
+          0,
+          4,
+          -4,
+          0
+        ],
+        "nonlinearity": 2
+      }
+    }
+  },
+  "C": {
+    "n": 4,
+    "truth": [
+      0,
+      1,
+      1,
+      0,
+      1,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      1,
+      0,
+      1,
+      1,
+      0
+    ],
+    "walsh": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      16
+    ],
+    "degree": 1,
+    "balanced": true,
+    "correlation_immunity_order": 3,
+    "resiliency_order": 3
+  },
+  "D": {
+    "n": 2,
+    "m": 2,
+    "truth": [
+      0,
+      0,
+      3,
+      3
+    ],
+    "output_counts": [
+      2,
+      0,
+      0,
+      2
+    ],
+    "coordinate_balanced": [
+      true,
+      true
+    ],
+    "vector_balanced": false,
+    "components": {
+      "1": {
+        "truth": [
+          0,
+          0,
+          1,
+          1
+        ],
+        "walsh": [
+          0,
+          0,
+          4,
+          0
+        ],
+        "nonlinearity": 0
+      },
+      "2": {
+        "truth": [
+          0,
+          0,
+          1,
+          1
+        ],
+        "walsh": [
+          0,
+          0,
+          4,
+          0
+        ],
+        "nonlinearity": 0
+      },
+      "3": {
+        "truth": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "walsh": [
+          4,
+          0,
+          0,
+          0
+        ],
+        "nonlinearity": 0
+      }
+    },
+    "conclusion": "Balanced coordinates do not imply a balanced vector mapping."
+  }
+}

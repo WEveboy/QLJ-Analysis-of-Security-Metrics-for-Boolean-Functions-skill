@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "verification": "exhaustive_finite_table",
+  "convention": "ascending integer index; x1 MSB; XOR difference; unnormalized Walsh",
+  "n": 2,
+  "m": 2,
+  "input_sha256": "8302dac0a78e2f157bd002758430a3c9baba5bd9ef219f233794c6aa36027b62",
+  "result": {
+    "components": {
+      "1": {
+        "weight": 2,
+        "balanced": true,
+        "degree": 1,
+        "anf_masks": [
+          2
+        ],
+        "walsh": [
+          0,
+          0,
+          4,
+          0
+        ],
+        "nonlinearity": 0,
+        "correlation_immunity_order": 0,
+        "resiliency_order": 0,
+        "bent": false
+      },
+      "2": {
+        "weight": 2,
+        "balanced": true,
+        "degree": 1,
+        "anf_masks": [
+          2
+        ],
+        "walsh": [
+          0,
+          0,
+          4,
+          0
+        ],
+        "nonlinearity": 0,
+        "correlation_immunity_order": 0,
+        "resiliency_order": 0,
+        "bent": false
+      },
+      "3": {
+        "weight": 0,
+        "balanced": false,
+        "degree": 0,
+        "anf_masks": [],
+        "walsh": [
+          4,
+          0,
+          0,
+          0
+        ],
+        "nonlinearity": 0,
+        "correlation_immunity_order": 2,
+        "resiliency_order": null,
+        "bent": false
+      }
+    },
+    "nonlinearity": 0,
+    "ddt": [
+      [
+        4,
+        0,
+        0,
+        0
+      ],
+      [
+        4,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        4
+      ],
+      [
+        0,
+        0,
+        0,
+        4
+      ]
+    ],
+    "differential_uniformity": 4,
+    "differential_witness": [
+      1,
+      0
+    ],
+    "permutation": false,
+    "binary_pn": false,
+    "binary_square_apn": false,
+    "vector_bent": false,
+    "square_almost_bent": false,
+    "resiliency_order": null
+  },
+  "input": {
+    "n": 2,
+    "m": 2,
+    "table": [
+      0,
+      0,
+      3,
+      3
+    ]
+  }
+}

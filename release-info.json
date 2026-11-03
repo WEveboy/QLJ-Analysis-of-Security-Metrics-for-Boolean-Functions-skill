@@ -1,0 +1,12 @@
+{
+  "version": "0.1.0",
+  "status": "research-draft",
+  "entrypoints": 1,
+  "capabilities": 8,
+  "source_year": 2011,
+  "source_id": "QLJ2011",
+  "runtime_dependencies": "Python >=3.10 standard library",
+  "compiler": "cangjie-tools 2.5.0",
+  "full_book_proofs_verified": false,
+  "global_install_performed": false
+}

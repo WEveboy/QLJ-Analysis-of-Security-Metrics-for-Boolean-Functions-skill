@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "verification": "exhaustive_finite_table",
+  "convention": "ascending integer index; x1 MSB; XOR difference; unnormalized Walsh",
+  "n": 2,
+  "m": 1,
+  "input_sha256": "c133ddf3d526403016c90a2b908fc285fa0154dac1ce7692e5f6a23a92a9d4a4",
+  "result": {
+    "weight": 1,
+    "balanced": false,
+    "degree": 2,
+    "anf_masks": [
+      3
+    ],
+    "walsh": [
+      2,
+      2,
+      2,
+      -2
+    ],
+    "nonlinearity": 1,
+    "correlation_immunity_order": 0,
+    "resiliency_order": null,
+    "bent": true,
+    "dual_table": [
+      0,
+      0,
+      0,
+      1
+    ]
+  },
+  "input": {
+    "n": 2,
+    "m": 1,
+    "table": [
+      0,
+      0,
+      0,
+      1
+    ]
+  }
+}
