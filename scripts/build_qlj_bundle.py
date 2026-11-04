@@ -58,8 +58,8 @@ CARDS=[
  'AI寻找f或f+1的非零零化子的最小次数。按d升序构造次数≤d单项式，在目标支持集上建立GF(2)齐次系统。任一侧出现非零核向量即可；零向量不能作证。较低次数两侧均满列秩，给最小性的有限消元依据。MAI指AI=ceil(n/2)，仅为该单项指标最优。常函数AI0。实现算法独立编写，不归因为原书现成代码。',
  '合成演练：f=x1*x2的AI1，g=1+x1使fg=0；n=4配对乘积Bent的AI2。',
  'algebraic immunity、AI、MAI、零化子、annihilator；请求向量AI时先辨三定义，当前不计算。',
- '输入添加ai:true；运行通用命令，读algebraic_immunity的value、annihilates、monomial_masks、witness_table。逐点核g非零、次数符合并且对应乘积全0。n>6输出not_computed，不将缺结果写成0。',
- '精确AI限n≤6。向量分量可逐项算标量AI，但不冒充已实现基本或图形向量AI，也不自动汇总三定义。MAI不保证快速代数攻击安全；本工具不计算FAI。'),
+ '输入添加ai:true；运行通用命令，读algebraic_immunity的value、annihilates、monomial_masks、witness_table。逐点核g非零、次数符合并且对应乘积全0。rank_checks逐项列degree、annihilates、rows、columns、rank、nullity；所有低于AI的次数应包含两侧满列秩记录。常函数method=constant_function_identity直接以非负次数及常数零化子证明AI0。非恒定函数n>6输出not_computed；已验证常函数直接给AI0，不将缺结果写成0。',
+ '非恒定函数精确AI限n≤6；常函数在输入维数预算内直接判AI0。向量分量可逐项算标量AI，但不冒充已实现基本或图形向量AI，也不自动汇总三定义。MAI不保证快速代数攻击安全；本工具不计算FAI。'),
 ('paired-bent','配对乘积Bent构造及复算','§4.1 例4.1及证明，书p106—107 / PDF116—117',
  '设n=2m为任意正偶数',
  '按书中例4.1把变量分成两半，f=Σ_(i=1)^h x_i*x_(h+i)，n=2h。对第二半变量求字符和，仅一项保留，从而Walsh恒幅2^h。这是已有符号构造；小维全算用于检查实现，不代替原书证明。先生成完整表，再用Bent卡独立判定。程序位序采用x1最高位。',
@@ -94,7 +94,7 @@ M-M输入：h（1至5）、pi（全置换表）、g（布尔表），n=2h；z=(x
 
 输入JSON：{"n":3,"m":3,"table":[0,1,3,4,5,6,7,2],"ai":false}。
 table长度2^n，元素严格整数，x1为最高位。m省略时为1。
-标量n≤10；向量n≤8,m≤8；精确AI n≤6。超AI预算单项not_computed；其他越限拒绝。
+标量n≤10；向量n≤8,m≤8；非恒定函数精确AI n≤6，常函数直接AI0。超AI预算单项not_computed；其他越限拒绝。
 成功退出0，输入/文件错误退出2；输出采用新建模式，已有文件拒绝覆盖。
 结果带完整输入、输入SHA256、维数、口径和exhaustive_finite_table级别；哈希不是签名认证。
 结果可重跑逐字段比较；需要原始stdout、退出码、环境时由调用者保存。
@@ -123,12 +123,12 @@ table长度2^n，元素严格整数，x1为最高位。m省略时为1。
         '区分B原书事实、D独立实现/合成演练、H未证研究方向；不把有限验证称为全族证明。',
         '向量性质检查全部非零分量；几乎Bent指向量AB；PN/APN保留域特征和维数条件。',
         '本版是限定范围研究初稿：全书OCR检索与关键页核图完成，待审构造见overview，未逐一定理核验。',
-        'runtime为Python标准库；精确AI限n≤6。not_computed与失败不同，null与0不同。',
+        'runtime为Python标准库；非恒定函数精确AI限n≤6；常函数直接AI0。not_computed与失败不同，null与0不同。',
         '参考来源为2011年专著；有关今天的最优记录与开放问题必须另外核查。'],
         out_of_scope=['通用代码工程、任意书籍自动蒸馏、无来源的新颖性和系统安全证明。'],
         stop_conditions=['关键域模型或输入规格不足时先补信息；超出预算明确未算。','未核参数构造不进入已证明方法；向量AI先区分三定义，当前只保留参考。'])
     bundle=dict(schema_version=1,bundle_id='bundle.qlj-security-metrics',book=dict(title='密码函数的安全性指标分析',
-        author='李超、屈龙江、周悦',source_pack='qlj-security-metrics-2011',baseline_tag='research-draft-0.2.0'),
+        author='李超、屈龙江、周悦',source_pack='qlj-security-metrics-2011',baseline_tag='research-draft-0.2.1'),
         entry=entry,router_entry=dict(name='qlj-security-metrics-router',description=desc),promotion_budget=2,capabilities=caps)
     (B/'verified.yaml').write_text(yaml.safe_dump(bundle,allow_unicode=True,sort_keys=False),encoding='utf-8')
     shutil.copyfile(BOOK/'BOOK_OVERVIEW.md',B/'book/overview.md')

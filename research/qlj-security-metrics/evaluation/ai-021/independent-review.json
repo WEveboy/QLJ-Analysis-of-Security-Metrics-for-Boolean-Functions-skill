@@ -1,0 +1,786 @@
+{
+  "review": "AI output incremental independent CLI review",
+  "created_utc": "2026-11-04T05:12:10.059527+00:00",
+  "environment": {
+    "python": "C:\\Users\\HP\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+    "version": "3.12.14"
+  },
+  "source": "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\release\\qlj-security-metrics-repo\\research\\qlj-security-metrics\\runtime_metrics.py",
+  "source_sha256": "e652b7e064647fbb748c291b2b90b23c84fe9d6e79d1373c95d0b40347eacfd0",
+  "independence": "No imports from calculator. Dense binary Gauss-Jordan with leftmost pivots, combination-based monomial basis. No test_metrics.py read.",
+  "cases": [
+    {
+      "case": "n2-and",
+      "command": [
+        "C:\\Users\\HP\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\release\\qlj-security-metrics-repo\\research\\qlj-security-metrics\\runtime_metrics.py",
+        "--input",
+        "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\release\\qlj-security-metrics-repo\\research\\qlj-security-metrics\\evaluation\\ai-021\\n2-and-input.json",
+        "--out",
+        "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\release\\qlj-security-metrics-repo\\research\\qlj-security-metrics\\evaluation\\ai-021\\n2-and-output.json"
+      ],
+      "command_display": "C:\\Users\\HP\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\release\\qlj-security-metrics-repo\\research\\qlj-security-metrics\\runtime_metrics.py --input C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\release\\qlj-security-metrics-repo\\research\\qlj-security-metrics\\evaluation\\ai-021\\n2-and-input.json --out C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\release\\qlj-security-metrics-repo\\research\\qlj-security-metrics\\evaluation\\ai-021\\n2-and-output.json",
+      "cwd": "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\release\\qlj-security-metrics-repo\\research\\qlj-security-metrics\\evaluation\\ai-021",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "input_file": "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\release\\qlj-security-metrics-repo\\research\\qlj-security-metrics\\evaluation\\ai-021\\n2-and-input.json",
+      "output_file": "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\release\\qlj-security-metrics-repo\\research\\qlj-security-metrics\\evaluation\\ai-021\\n2-and-output.json",
+      "actual_ai_result": {
+        "status": "exact",
+        "value": 1,
+        "annihilates": "f",
+        "monomial_masks": [
+          0,
+          2
+        ],
+        "witness_table": [
+          1,
+          1,
+          0,
+          0
+        ],
+        "optimal": true,
+        "method": "two_sided_gf2_rank_search",
+        "rank_checks": [
+          {
+            "degree": 0,
+            "annihilates": "f",
+            "rows": 1,
+            "columns": 1,
+            "rank": 1,
+            "nullity": 0
+          },
+          {
+            "degree": 0,
+            "annihilates": "f+1",
+            "rows": 3,
+            "columns": 1,
+            "rank": 1,
+            "nullity": 0
+          },
+          {
+            "degree": 1,
+            "annihilates": "f",
+            "rows": 1,
+            "columns": 3,
+            "rank": 1,
+            "nullity": 2
+          }
+        ],
+        "minimality": "both sides have full column rank at every lower degree"
+      },
+      "independent_verification": {
+        "reported_status": "exact",
+        "rank_checks": [
+          {
+            "reported": {
+              "degree": 0,
+              "annihilates": "f",
+              "rows": 1,
+              "columns": 1,
+              "rank": 1,
+              "nullity": 0
+            },
+            "independent": {
+              "degree": 0,
+              "annihilates": "f",
+              "rows": 1,
+              "columns": 1,
+              "rank": 1,
+              "nullity": 0
+            },
+            "match": true
+          },
+          {
+            "reported": {
+              "degree": 0,
+              "annihilates": "f+1",
+              "rows": 3,
+              "columns": 1,
+              "rank": 1,
+              "nullity": 0
+            },
+            "independent": {
+              "degree": 0,
+              "annihilates": "f+1",
+              "rows": 3,
+              "columns": 1,
+              "rank": 1,
+              "nullity": 0
+            },
+            "match": true
+          },
+          {
+            "reported": {
+              "degree": 1,
+              "annihilates": "f",
+              "rows": 1,
+              "columns": 3,
+              "rank": 1,
+              "nullity": 2
+            },
+            "independent": {
+              "degree": 1,
+              "annihilates": "f",
+              "rows": 1,
+              "columns": 3,
+              "rank": 1,
+              "nullity": 2
+            },
+            "match": true
+          }
+        ],
+        "errors": [],
+        "lower_degree_both_sides": [
+          {
+            "degree": 0,
+            "annihilates": "f",
+            "rank": 1,
+            "columns": 1,
+            "full_column_rank": true
+          },
+          {
+            "degree": 0,
+            "annihilates": "f+1",
+            "rank": 1,
+            "columns": 1,
+            "full_column_rank": true
+          }
+        ],
+        "witness": {
+          "nonzero": true,
+          "matches_reported_table": true,
+          "degree_from_masks": 1,
+          "degree_matches_AI": true,
+          "product_all_zero": true,
+          "degree_nonnegative_bound": true
+        },
+        "all_lower_degree_records_present": true,
+        "winning_degree_nullity": 2
+      },
+      "passed": true
+    },
+    {
+      "case": "n4-paired-bent",
+      "command": [
+        "C:\\Users\\HP\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\release\\qlj-security-metrics-repo\\research\\qlj-security-metrics\\runtime_metrics.py",
+        "--input",
+        "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\release\\qlj-security-metrics-repo\\research\\qlj-security-metrics\\evaluation\\ai-021\\n4-paired-bent-input.json",
+        "--out",
+        "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\release\\qlj-security-metrics-repo\\research\\qlj-security-metrics\\evaluation\\ai-021\\n4-paired-bent-output.json"
+      ],
+      "command_display": "C:\\Users\\HP\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\release\\qlj-security-metrics-repo\\research\\qlj-security-metrics\\runtime_metrics.py --input C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\release\\qlj-security-metrics-repo\\research\\qlj-security-metrics\\evaluation\\ai-021\\n4-paired-bent-input.json --out C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\release\\qlj-security-metrics-repo\\research\\qlj-security-metrics\\evaluation\\ai-021\\n4-paired-bent-output.json",
+      "cwd": "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\release\\qlj-security-metrics-repo\\research\\qlj-security-metrics\\evaluation\\ai-021",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "input_file": "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\release\\qlj-security-metrics-repo\\research\\qlj-security-metrics\\evaluation\\ai-021\\n4-paired-bent-input.json",
+      "output_file": "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\release\\qlj-security-metrics-repo\\research\\qlj-security-metrics\\evaluation\\ai-021\\n4-paired-bent-output.json",
+      "actual_ai_result": {
+        "status": "exact",
+        "value": 2,
+        "annihilates": "f",
+        "monomial_masks": [
+          0,
+          5,
+          10
+        ],
+        "witness_table": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1
+        ],
+        "optimal": true,
+        "method": "two_sided_gf2_rank_search",
+        "rank_checks": [
+          {
+            "degree": 0,
+            "annihilates": "f",
+            "rows": 6,
+            "columns": 1,
+            "rank": 1,
+            "nullity": 0
+          },
+          {
+            "degree": 0,
+            "annihilates": "f+1",
+            "rows": 10,
+            "columns": 1,
+            "rank": 1,
+            "nullity": 0
+          },
+          {
+            "degree": 1,
+            "annihilates": "f",
+            "rows": 6,
+            "columns": 5,
+            "rank": 5,
+            "nullity": 0
+          },
+          {
+            "degree": 1,
+            "annihilates": "f+1",
+            "rows": 10,
+            "columns": 5,
+            "rank": 5,
+            "nullity": 0
+          },
+          {
+            "degree": 2,
+            "annihilates": "f",
+            "rows": 6,
+            "columns": 11,
+            "rank": 6,
+            "nullity": 5
+          }
+        ],
+        "minimality": "both sides have full column rank at every lower degree"
+      },
+      "independent_verification": {
+        "reported_status": "exact",
+        "rank_checks": [
+          {
+            "reported": {
+              "degree": 0,
+              "annihilates": "f",
+              "rows": 6,
+              "columns": 1,
+              "rank": 1,
+              "nullity": 0
+            },
+            "independent": {
+              "degree": 0,
+              "annihilates": "f",
+              "rows": 6,
+              "columns": 1,
+              "rank": 1,
+              "nullity": 0
+            },
+            "match": true
+          },
+          {
+            "reported": {
+              "degree": 0,
+              "annihilates": "f+1",
+              "rows": 10,
+              "columns": 1,
+              "rank": 1,
+              "nullity": 0
+            },
+            "independent": {
+              "degree": 0,
+              "annihilates": "f+1",
+              "rows": 10,
+              "columns": 1,
+              "rank": 1,
+              "nullity": 0
+            },
+            "match": true
+          },
+          {
+            "reported": {
+              "degree": 1,
+              "annihilates": "f",
+              "rows": 6,
+              "columns": 5,
+              "rank": 5,
+              "nullity": 0
+            },
+            "independent": {
+              "degree": 1,
+              "annihilates": "f",
+              "rows": 6,
+              "columns": 5,
+              "rank": 5,
+              "nullity": 0
+            },
+            "match": true
+          },
+          {
+            "reported": {
+              "degree": 1,
+              "annihilates": "f+1",
+              "rows": 10,
+              "columns": 5,
+              "rank": 5,
+              "nullity": 0
+            },
+            "independent": {
+              "degree": 1,
+              "annihilates": "f+1",
+              "rows": 10,
+              "columns": 5,
+              "rank": 5,
+              "nullity": 0
+            },
+            "match": true
+          },
+          {
+            "reported": {
+              "degree": 2,
+              "annihilates": "f",
+              "rows": 6,
+              "columns": 11,
+              "rank": 6,
+              "nullity": 5
+            },
+            "independent": {
+              "degree": 2,
+              "annihilates": "f",
+              "rows": 6,
+              "columns": 11,
+              "rank": 6,
+              "nullity": 5
+            },
+            "match": true
+          }
+        ],
+        "errors": [],
+        "lower_degree_both_sides": [
+          {
+            "degree": 0,
+            "annihilates": "f",
+            "rank": 1,
+            "columns": 1,
+            "full_column_rank": true
+          },
+          {
+            "degree": 0,
+            "annihilates": "f+1",
+            "rank": 1,
+            "columns": 1,
+            "full_column_rank": true
+          },
+          {
+            "degree": 1,
+            "annihilates": "f",
+            "rank": 5,
+            "columns": 5,
+            "full_column_rank": true
+          },
+          {
+            "degree": 1,
+            "annihilates": "f+1",
+            "rank": 5,
+            "columns": 5,
+            "full_column_rank": true
+          }
+        ],
+        "witness": {
+          "nonzero": true,
+          "matches_reported_table": true,
+          "degree_from_masks": 2,
+          "degree_matches_AI": true,
+          "product_all_zero": true,
+          "degree_nonnegative_bound": true
+        },
+        "all_lower_degree_records_present": true,
+        "winning_degree_nullity": 5
+      },
+      "passed": true
+    },
+    {
+      "case": "n7-zero",
+      "command": [
+        "C:\\Users\\HP\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\release\\qlj-security-metrics-repo\\research\\qlj-security-metrics\\runtime_metrics.py",
+        "--input",
+        "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\release\\qlj-security-metrics-repo\\research\\qlj-security-metrics\\evaluation\\ai-021\\n7-zero-input.json",
+        "--out",
+        "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\release\\qlj-security-metrics-repo\\research\\qlj-security-metrics\\evaluation\\ai-021\\n7-zero-output.json"
+      ],
+      "command_display": "C:\\Users\\HP\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\release\\qlj-security-metrics-repo\\research\\qlj-security-metrics\\runtime_metrics.py --input C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\release\\qlj-security-metrics-repo\\research\\qlj-security-metrics\\evaluation\\ai-021\\n7-zero-input.json --out C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\release\\qlj-security-metrics-repo\\research\\qlj-security-metrics\\evaluation\\ai-021\\n7-zero-output.json",
+      "cwd": "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\release\\qlj-security-metrics-repo\\research\\qlj-security-metrics\\evaluation\\ai-021",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "input_file": "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\release\\qlj-security-metrics-repo\\research\\qlj-security-metrics\\evaluation\\ai-021\\n7-zero-input.json",
+      "output_file": "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\release\\qlj-security-metrics-repo\\research\\qlj-security-metrics\\evaluation\\ai-021\\n7-zero-output.json",
+      "actual_ai_result": {
+        "status": "exact",
+        "value": 0,
+        "annihilates": "f",
+        "monomial_masks": [
+          0
+        ],
+        "witness_table": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "optimal": false,
+        "method": "constant_function_identity",
+        "rank_checks": [],
+        "minimality": "degree is nonnegative; constant 1 annihilates the zero side"
+      },
+      "independent_verification": {
+        "reported_status": "exact",
+        "rank_checks": [],
+        "errors": [],
+        "lower_degree_both_sides": [],
+        "witness": {
+          "nonzero": true,
+          "matches_reported_table": true,
+          "degree_from_masks": 0,
+          "degree_matches_AI": true,
+          "product_all_zero": true,
+          "degree_nonnegative_bound": true
+        },
+        "constant_identity_checked": true
+      },
+      "passed": true
+    },
+    {
+      "case": "n7-one",
+      "command": [
+        "C:\\Users\\HP\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\release\\qlj-security-metrics-repo\\research\\qlj-security-metrics\\runtime_metrics.py",
+        "--input",
+        "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\release\\qlj-security-metrics-repo\\research\\qlj-security-metrics\\evaluation\\ai-021\\n7-one-input.json",
+        "--out",
+        "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\release\\qlj-security-metrics-repo\\research\\qlj-security-metrics\\evaluation\\ai-021\\n7-one-output.json"
+      ],
+      "command_display": "C:\\Users\\HP\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\release\\qlj-security-metrics-repo\\research\\qlj-security-metrics\\runtime_metrics.py --input C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\release\\qlj-security-metrics-repo\\research\\qlj-security-metrics\\evaluation\\ai-021\\n7-one-input.json --out C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\release\\qlj-security-metrics-repo\\research\\qlj-security-metrics\\evaluation\\ai-021\\n7-one-output.json",
+      "cwd": "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\release\\qlj-security-metrics-repo\\research\\qlj-security-metrics\\evaluation\\ai-021",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "input_file": "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\release\\qlj-security-metrics-repo\\research\\qlj-security-metrics\\evaluation\\ai-021\\n7-one-input.json",
+      "output_file": "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\release\\qlj-security-metrics-repo\\research\\qlj-security-metrics\\evaluation\\ai-021\\n7-one-output.json",
+      "actual_ai_result": {
+        "status": "exact",
+        "value": 0,
+        "annihilates": "f+1",
+        "monomial_masks": [
+          0
+        ],
+        "witness_table": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "optimal": false,
+        "method": "constant_function_identity",
+        "rank_checks": [],
+        "minimality": "degree is nonnegative; constant 1 annihilates the zero side"
+      },
+      "independent_verification": {
+        "reported_status": "exact",
+        "rank_checks": [],
+        "errors": [],
+        "lower_degree_both_sides": [],
+        "witness": {
+          "nonzero": true,
+          "matches_reported_table": true,
+          "degree_from_masks": 0,
+          "degree_matches_AI": true,
+          "product_all_zero": true,
+          "degree_nonnegative_bound": true
+        },
+        "constant_identity_checked": true
+      },
+      "passed": true
+    },
+    {
+      "case": "n7-parity",
+      "command": [
+        "C:\\Users\\HP\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\release\\qlj-security-metrics-repo\\research\\qlj-security-metrics\\runtime_metrics.py",
+        "--input",
+        "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\release\\qlj-security-metrics-repo\\research\\qlj-security-metrics\\evaluation\\ai-021\\n7-parity-input.json",
+        "--out",
+        "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\release\\qlj-security-metrics-repo\\research\\qlj-security-metrics\\evaluation\\ai-021\\n7-parity-output.json"
+      ],
+      "command_display": "C:\\Users\\HP\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\release\\qlj-security-metrics-repo\\research\\qlj-security-metrics\\runtime_metrics.py --input C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\release\\qlj-security-metrics-repo\\research\\qlj-security-metrics\\evaluation\\ai-021\\n7-parity-input.json --out C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\release\\qlj-security-metrics-repo\\research\\qlj-security-metrics\\evaluation\\ai-021\\n7-parity-output.json",
+      "cwd": "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\release\\qlj-security-metrics-repo\\research\\qlj-security-metrics\\evaluation\\ai-021",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "input_file": "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\release\\qlj-security-metrics-repo\\research\\qlj-security-metrics\\evaluation\\ai-021\\n7-parity-input.json",
+      "output_file": "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\release\\qlj-security-metrics-repo\\research\\qlj-security-metrics\\evaluation\\ai-021\\n7-parity-output.json",
+      "actual_ai_result": {
+        "status": "not_computed",
+        "reason": "exact AI requires n<=6"
+      },
+      "independent_verification": {
+        "reported_status": "not_computed",
+        "rank_checks": [],
+        "errors": [],
+        "action": "No exact value or witness claimed; verify nonconstant input exceeds search budget.",
+        "budget_stop_consistent": true
+      },
+      "passed": true
+    }
+  ],
+  "summary": {
+    "CLI_runs": 5,
+    "successful_exits": 5,
+    "independent_checks_passed": 5,
+    "reported_rank_records_checked": 8
+  }
+}

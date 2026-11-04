@@ -42,8 +42,8 @@ def walsh(table):
     return a
 
 
-def null_witness(rows, cols):
-    """Return a nonzero GF(2) null vector; rows are integer bitmasks."""
+def echelon(rows):
+    """Highest-bit pivots for a GF(2) matrix represented by integer rows."""
     pivots = {}
     for row in rows:
         while row:
@@ -52,6 +52,15 @@ def null_witness(rows, cols):
                 pivots[p] = row
                 break
             row ^= pivots[p]
+    return pivots
+
+
+def null_witness(rows, cols):
+    """Return a nonzero GF(2) null vector; rows are integer bitmasks."""
+    return witness_from_pivots(echelon(rows), cols)
+
+
+def witness_from_pivots(pivots, cols):
     free = next((j for j in range(cols) if j not in pivots), None)
     if free is None:
         return None
@@ -63,15 +72,27 @@ def null_witness(rows, cols):
 
 
 def algebraic_immunity(table, n):
+    validate(table,n)
+    if len(set(table)) == 1:
+        target=table[0]
+        return {'status':'exact','value':0,'annihilates':'f' if target==0 else 'f+1',
+                'monomial_masks':[0],'witness_table':[1]*len(table),
+                'optimal':False,'method':'constant_function_identity','rank_checks':[],
+                'minimality':'degree is nonnegative; constant 1 annihilates the zero side'}
     if n > 6:
         return {'status': 'not_computed', 'reason': 'exact AI requires n<=6'}
+    checks=[]
     for d in range((n+1)//2+1):
         monomials = [mask for mask in range(1 << n) if mask.bit_count() <= d]
         for target in (0, 1):
             # g annihilates f if g vanishes where f=1; or f+1 where f=0.
             rows = [sum(1 << j for j,mask in enumerate(monomials) if x & mask == mask)
                     for x,v in enumerate(table) if v == 1-target]
-            coeff = null_witness(rows, len(monomials))
+            pivots=echelon(rows)
+            checks.append({'degree':d,'annihilates':'f' if target==0 else 'f+1',
+                           'rows':len(rows),'columns':len(monomials),'rank':len(pivots),
+                           'nullity':len(monomials)-len(pivots)})
+            coeff = witness_from_pivots(pivots, len(monomials))
             if coeff is not None:
                 masks = [mask for j,mask in enumerate(monomials) if coeff >> j & 1]
                 values = [parity(sum(1 << j for j,mask in enumerate(masks) if x & mask == mask))
@@ -79,7 +100,9 @@ def algebraic_immunity(table, n):
                 assert any(values) and all(not values[x] or table[x] == target for x in range(1 << n))
                 return {'status': 'exact', 'value': d, 'annihilates': 'f' if target == 0 else 'f+1',
                         'monomial_masks': masks, 'witness_table': values,
-                        'optimal': d == (n+1)//2}
+                        'optimal': d == (n+1)//2,'method':'two_sided_gf2_rank_search',
+                        'rank_checks':checks,
+                        'minimality':'both sides have full column rank at every lower degree'}
     raise AssertionError('AI upper bound failed')
 
 

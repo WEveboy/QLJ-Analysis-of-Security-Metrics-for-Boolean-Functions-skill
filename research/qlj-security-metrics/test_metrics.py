@@ -36,7 +36,22 @@ class MetricsTests(unittest.TestCase):
                 distances=[sum(v!=(((x&a).bit_count()&1)^c) for x,v in enumerate(t))
                            for a in range(1<<n) for c in (0,1)]
                 self.assertEqual(r['nonlinearity'],min(distances))
-                self.assertEqual(r['algebraic_immunity']['value'],brute_ai(t,n))
+                ai=r['algebraic_immunity']
+                self.assertEqual(ai['value'],brute_ai(t,n))
+                for check in ai['rank_checks']:
+                    masks=[a for a in range(1<<n) if a.bit_count()<=check['degree']]
+                    support=[x for x,v in enumerate(t) if v==(1 if check['annihilates']=='f' else 0)]
+                    rows=[sum(1<<j for j,a in enumerate(masks) if x&a==a) for x in support]
+                    # Independent rank by enumerating the full row span (small n only).
+                    span={0}
+                    for row in rows:span |= {v^row for v in list(span)}
+                    rank=len(span).bit_length()-1
+                    self.assertEqual(rank,check['rank'])
+                    self.assertEqual(len(masks)-rank,check['nullity'])
+                for d in range(ai['value']):
+                    low=[c for c in ai['rank_checks'] if c['degree']==d]
+                    self.assertEqual(len(low),2)
+                    self.assertTrue(all(c['rank']==c['columns'] for c in low))
 
     def test_all_two_by_two_maps(self):
         for t in itertools.product(range(4),repeat=4):
@@ -85,7 +100,12 @@ class MetricsTests(unittest.TestCase):
             self.assertIsNone(r['resiliency_order'])
 
     def test_ai_budget(self):
-        self.assertEqual(algebraic_immunity([0]*128,7)['status'],'not_computed')
+        for n in (7,10):
+            for v in (0,1):
+                ai=algebraic_immunity([v]*(1<<n),n)
+                self.assertEqual(ai['value'],0)
+                self.assertEqual(ai['method'],'constant_function_identity')
+        self.assertEqual(algebraic_immunity([x&1 for x in range(128)],7)['status'],'not_computed')
 
     def test_reject_bad_input(self):
         for s in ({'n':True,'table':[0,1]}, {'n':2,'table':[0,1]},

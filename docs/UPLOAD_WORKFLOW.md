@@ -6,3 +6,5 @@
 4. 运行标准库单元测试、CLI案例、cangjie格式/引用验证与实际输出评测。校验哈希不代替数学证明。
 5. 原子提交后核对SHA与文件清单，等待CI；修复失败后再交付。
 6. 本仓库不产Windows EXE，本次不创建EXE Release。无新增LICENSE；原著权益不转授。
+
+后续操作以本技能独立仓库目录为根，避免在同工作区程序目录生成同名README或CI。发布前用validate_release.py生成日志；CI附带两版Python的validation.json下载资产。

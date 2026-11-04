@@ -24,3 +24,7 @@ python <cangjie-skill>/scripts/validate_skill_pack.py <新输出目录>/qlj-secu
 源文件PDF及OCR不分发；根据source-manifest.json的SHA256核对本地合法来源。
 
 M-M示例：python skills/qlj-security-metrics/resources/mm_construction.py --input examples/mm-4.json --out mm-new.json
+
+## 结构化验证日志（0.2.1）
+
+运行`python scripts/validate_release.py --out validation-new.json`。报告包括实际命令、UTC时间、单调耗时、退出码、stdout/stderr、运行程序SHA256与烟雾断言。拒绝覆盖现有日志；失败退出1。AI新增rank_checks可按完整表重新建立对应次数的两侧矩阵核秩；常函数走定义恒等式而无矩阵记录。哈希只是内部一致性，不是身份认证。

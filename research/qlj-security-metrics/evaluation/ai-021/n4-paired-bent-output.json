@@ -1,0 +1,153 @@
+{
+  "schema_version": 1,
+  "verification": "exhaustive_finite_table",
+  "convention": "ascending integer index; x1 MSB; XOR difference; unnormalized Walsh",
+  "n": 4,
+  "m": 1,
+  "input_sha256": "5e8b33dd9244eecd2e76c16f3865fbd3200b2da5312f4f5dce054420071ae22d",
+  "result": {
+    "weight": 6,
+    "balanced": false,
+    "degree": 2,
+    "anf_masks": [
+      5,
+      10
+    ],
+    "walsh": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      -4,
+      4,
+      -4,
+      4,
+      4,
+      -4,
+      -4,
+      4,
+      -4,
+      -4,
+      4
+    ],
+    "nonlinearity": 6,
+    "correlation_immunity_order": 0,
+    "resiliency_order": null,
+    "bent": true,
+    "dual_table": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      1,
+      0,
+      0,
+      1,
+      1,
+      0,
+      1,
+      1,
+      0
+    ],
+    "algebraic_immunity": {
+      "status": "exact",
+      "value": 2,
+      "annihilates": "f",
+      "monomial_masks": [
+        0,
+        5,
+        10
+      ],
+      "witness_table": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1
+      ],
+      "optimal": true,
+      "method": "two_sided_gf2_rank_search",
+      "rank_checks": [
+        {
+          "degree": 0,
+          "annihilates": "f",
+          "rows": 6,
+          "columns": 1,
+          "rank": 1,
+          "nullity": 0
+        },
+        {
+          "degree": 0,
+          "annihilates": "f+1",
+          "rows": 10,
+          "columns": 1,
+          "rank": 1,
+          "nullity": 0
+        },
+        {
+          "degree": 1,
+          "annihilates": "f",
+          "rows": 6,
+          "columns": 5,
+          "rank": 5,
+          "nullity": 0
+        },
+        {
+          "degree": 1,
+          "annihilates": "f+1",
+          "rows": 10,
+          "columns": 5,
+          "rank": 5,
+          "nullity": 0
+        },
+        {
+          "degree": 2,
+          "annihilates": "f",
+          "rows": 6,
+          "columns": 11,
+          "rank": 6,
+          "nullity": 5
+        }
+      ],
+      "minimality": "both sides have full column rank at every lower degree"
+    }
+  },
+  "input": {
+    "n": 4,
+    "m": 1,
+    "table": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      1,
+      0,
+      0,
+      1,
+      1,
+      0,
+      1,
+      1,
+      0
+    ],
+    "ai": true
+  }
+}

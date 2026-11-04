@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "runtime_sha256": {
+    "mm_construction.py": "3d25d9b4c6092034a537b9142849a8849cdbf348f673fcb76e1dd795e3a3b230",
+    "runtime_metrics.py": "e652b7e064647fbb748c291b2b90b23c84fe9d6e79d1373c95d0b40347eacfd0",
+    "test_metrics.py": "25294cd3b336179273b07f6fbaf75c58465d045d333dc39b7e83dcae733f0d7d",
+    "test_mm.py": "d662758c38418076c236dea63e5119c57a4f90877eee3b5ec043577d4658f588"
+  },
+  "commands": [
+    {
+      "stage": "unit_tests",
+      "started_utc": "2026-11-04T05:10:12.385410+00:00",
+      "elapsed_seconds": 0.42200000000002547,
+      "command": [
+        "C:\\Users\\HP\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "skills/qlj-security-metrics/resources",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_ab_gold (test_metrics.MetricsTests.test_ab_gold) ... ok\ntest_ai_budget (test_metrics.MetricsTests.test_ai_budget) ... ok\ntest_all_two_by_two_maps (test_metrics.MetricsTests.test_all_two_by_two_maps) ... ok\ntest_bent_dual (test_metrics.MetricsTests.test_bent_dual) ... ok\ntest_coordinates_do_not_suffice (test_metrics.MetricsTests.test_coordinates_do_not_suffice) ... ok\ntest_exhaustive_scalar_through_three_variables (test_metrics.MetricsTests.test_exhaustive_scalar_through_three_variables) ... ok\ntest_paired_construction_range (test_metrics.MetricsTests.test_paired_construction_range) ... ok\ntest_parity_and_constants (test_metrics.MetricsTests.test_parity_and_constants) ... ok\ntest_reject_bad_input (test_metrics.MetricsTests.test_reject_bad_input) ... ok\ntest_all_h2_permutations_and_offsets (test_mm.MMTests.test_all_h2_permutations_and_offsets) ... ok\ntest_budget_endpoints (test_mm.MMTests.test_budget_endpoints) ... ok\ntest_invalid_spec (test_mm.MMTests.test_invalid_spec) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.194s\n\nOK\n"
+    },
+    {
+      "stage": "repository_integrity",
+      "started_utc": "2026-11-04T05:10:12.816139+00:00",
+      "elapsed_seconds": 0.20299999999997453,
+      "command": [
+        "C:\\Users\\HP\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "scripts/check_repository.py"
+      ],
+      "exit_code": 0,
+      "stdout": "PASS compiled hashes: 19 and local Markdown links\n",
+      "stderr": ""
+    },
+    {
+      "stage": "gold",
+      "started_utc": "2026-11-04T05:10:13.022789+00:00",
+      "elapsed_seconds": 0.13999999999987267,
+      "command": [
+        "C:\\Users\\HP\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "skills/qlj-security-metrics/resources/runtime_metrics.py",
+        "--input",
+        "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\release\\qlj-security-metrics-repo\\examples\\gold-3.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"schema_version\": 1,\n  \"verification\": \"exhaustive_finite_table\",\n  \"convention\": \"ascending integer index; x1 MSB; XOR difference; unnormalized Walsh\",\n  \"n\": 3,\n  \"m\": 3,\n  \"input_sha256\": \"87fc1f28e53bb2e9705fabfb87d9e08adb63f54e5e53bb0782916abda68ed3b3\",\n  \"result\": {\n    \"components\": {\n      \"1\": {\n        \"weight\": 4,\n        \"balanced\": true,\n        \"degree\": 2,\n        \"anf_masks\": [\n          1,\n          2,\n          4,\n          6\n        ],\n        \"walsh\": [\n          0,\n          -4,\n          0,\n          4,\n          0,\n          4,\n          0,\n          4\n        ],\n        \"nonlinearity\": 2,\n        \"correlation_immunity_order\": 0,\n        \"resiliency_order\": 0,\n        \"bent\": false\n      },\n      \"2\": {\n        \"weight\": 4,\n        \"balanced\": true,\n        \"degree\": 2,\n        \"anf_masks\": [\n          2,\n          3,\n          5\n        ],\n        \"walsh\": [\n          0,\n          0,\n          4,\n          4,\n          4,\n          -4,\n          0,\n          0\n        ],\n        \"nonlinearity\": 2,\n        \"correlation_immunity_order\": 0,\n        \"resiliency_order\": 0,\n        \"bent\": false\n      },\n      \"3\": {\n        \"weight\": 4,\n        \"balanced\": true,\n        \"degree\": 2,\n        \"anf_masks\": [\n          1,\n          3,\n          4,\n          5,\n          6\n        ],\n        \"walsh\": [\n          0,\n          4,\n          -4,\n          0,\n          4,\n          0,\n          0,\n          4\n        ],\n        \"nonlinearity\": 2,\n        \"correlation_immunity_order\": 0,\n        \"resiliency_order\": 0,\n        \"bent\": false\n      },\n      \"4\": {\n        \"weight\": 4,\n        \"balanced\": true,\n        \"degree\": 2,\n        \"anf_masks\": [\n          3,\n          4\n        ],\n        \"walsh\": [\n          0,\n          0,\n          0,\n          0,\n          4,\n          4,\n          4,\n          -4\n        ],\n        \"nonlinearity\": 2,\n        \"correlation_immunity_order\": 0,\n        \"resiliency_order\": 0,\n        \"bent\": false\n      },\n      \"5\": {\n        \"weight\": 4,\n        \"balanced\": true,\n        \"degree\": 2,\n        \"anf_masks\": [\n          1,\n          2,\n          3,\n          6\n        ],\n        \"walsh\": [\n          0,\n          4,\n          0,\n          4,\n          -4,\n          0,\n          4,\n          0\n        ],\n        \"nonlinearity\": 2,\n        \"correlation_immunity_order\": 0,\n        \"resiliency_order\": 0,\n        \"bent\": false\n      },\n      \"6\": {\n        \"weight\": 4,\n        \"balanced\": true,\n        \"degree\": 2,\n        \"anf_masks\": [\n          2,\n          4,\n          5\n        ],\n        \"walsh\": [\n          0,\n          0,\n          4,\n          -4,\n          0,\n          0,\n          4,\n          4\n        ],\n        \"nonlinearity\": 2,\n        \"correlation_immunity_order\": 0,\n        \"resiliency_order\": 0,\n        \"bent\": false\n      },\n      \"7\": {\n        \"weight\": 4,\n        \"balanced\": true,\n        \"degree\": 2,\n        \"anf_masks\": [\n          1,\n          5,\n          6\n        ],\n        \"walsh\": [\n          0,\n          4,\n          4,\n          0,\n          0,\n          4,\n          -4,\n          0\n        ],\n        \"nonlinearity\": 2,\n        \"correlation_immunity_order\": 0,\n        \"resiliency_order\": 0,\n        \"bent\": false\n      }\n    },\n    \"nonlinearity\": 2,\n    \"ddt\": [\n      [\n        8,\n        0,\n        0,\n        0,\n        0,\n        0,\n        0,\n        0\n      ],\n      [\n        0,\n        2,\n        0,\n        2,\n        0,\n        2,\n        0,\n        2\n      ],\n      [\n        0,\n        0,\n        2,\n        2,\n        2,\n        2,\n        0,\n        0\n      ],\n      [\n        0,\n        2,\n        2,\n        0,\n        2,\n        0,\n        0,\n        2\n      ],\n      [\n        0,\n        0,\n        0,\n        0,\n        2,\n        2,\n        2,\n        2\n      ],\n      [\n        0,\n        2,\n        0,\n        2,\n        2,\n        0,\n        2,\n        0\n      ],\n      [\n        0,\n        0,\n        2,\n        2,\n        0,\n        0,\n        2,\n        2\n      ],\n      [\n        0,\n        2,\n        2,\n        0,\n        0,\n        2,\n        2,\n        0\n      ]\n    ],\n    \"differential_uniformity\": 2,\n    \"differential_witness\": [\n      1,\n      1\n    ],\n    \"permutation\": true,\n    \"binary_pn\": false,\n    \"binary_square_apn\": true,\n    \"vector_bent\": false,\n    \"square_almost_bent\": true,\n    \"resiliency_order\": 0\n  },\n  \"input\": {\n    \"n\": 3,\n    \"m\": 3,\n    \"table\": [\n      0,\n      1,\n      3,\n      4,\n      5,\n      6,\n      7,\n      2\n    ],\n    \"ai\": false\n  }\n}\n",
+      "stderr": ""
+    },
+    {
+      "stage": "bent",
+      "started_utc": "2026-11-04T05:10:13.160444+00:00",
+      "elapsed_seconds": 0.125,
+      "command": [
+        "C:\\Users\\HP\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "skills/qlj-security-metrics/resources/runtime_metrics.py",
+        "--input",
+        "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\release\\qlj-security-metrics-repo\\examples\\bent-4.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"schema_version\": 1,\n  \"verification\": \"exhaustive_finite_table\",\n  \"convention\": \"ascending integer index; x1 MSB; XOR difference; unnormalized Walsh\",\n  \"n\": 4,\n  \"m\": 1,\n  \"input_sha256\": \"5e8b33dd9244eecd2e76c16f3865fbd3200b2da5312f4f5dce054420071ae22d\",\n  \"result\": {\n    \"weight\": 6,\n    \"balanced\": false,\n    \"degree\": 2,\n    \"anf_masks\": [\n      5,\n      10\n    ],\n    \"walsh\": [\n      4,\n      4,\n      4,\n      4,\n      4,\n      -4,\n      4,\n      -4,\n      4,\n      4,\n      -4,\n      -4,\n      4,\n      -4,\n      -4,\n      4\n    ],\n    \"nonlinearity\": 6,\n    \"correlation_immunity_order\": 0,\n    \"resiliency_order\": null,\n    \"bent\": true,\n    \"dual_table\": [\n      0,\n      0,\n      0,\n      0,\n      0,\n      1,\n      0,\n      1,\n      0,\n      0,\n      1,\n      1,\n      0,\n      1,\n      1,\n      0\n    ],\n    \"algebraic_immunity\": {\n      \"status\": \"exact\",\n      \"value\": 2,\n      \"annihilates\": \"f\",\n      \"monomial_masks\": [\n        0,\n        5,\n        10\n      ],\n      \"witness_table\": [\n        1,\n        1,\n        1,\n        1,\n        1,\n        0,\n        1,\n        0,\n        1,\n        1,\n        0,\n        0,\n        1,\n        0,\n        0,\n        1\n      ],\n      \"optimal\": true,\n      \"method\": \"two_sided_gf2_rank_search\",\n      \"rank_checks\": [\n        {\n          \"degree\": 0,\n          \"annihilates\": \"f\",\n          \"rows\": 6,\n          \"columns\": 1,\n          \"rank\": 1,\n          \"nullity\": 0\n        },\n        {\n          \"degree\": 0,\n          \"annihilates\": \"f+1\",\n          \"rows\": 10,\n          \"columns\": 1,\n          \"rank\": 1,\n          \"nullity\": 0\n        },\n        {\n          \"degree\": 1,\n          \"annihilates\": \"f\",\n          \"rows\": 6,\n          \"columns\": 5,\n          \"rank\": 5,\n          \"nullity\": 0\n        },\n        {\n          \"degree\": 1,\n          \"annihilates\": \"f+1\",\n          \"rows\": 10,\n          \"columns\": 5,\n          \"rank\": 5,\n          \"nullity\": 0\n        },\n        {\n          \"degree\": 2,\n          \"annihilates\": \"f\",\n          \"rows\": 6,\n          \"columns\": 11,\n          \"rank\": 6,\n          \"nullity\": 5\n        }\n      ],\n      \"minimality\": \"both sides have full column rank at every lower degree\"\n    }\n  },\n  \"input\": {\n    \"n\": 4,\n    \"m\": 1,\n    \"table\": [\n      0,\n      0,\n      0,\n      0,\n      0,\n      1,\n      0,\n      1,\n      0,\n      0,\n      1,\n      1,\n      0,\n      1,\n      1,\n      0\n    ],\n    \"ai\": true\n  }\n}\n",
+      "stderr": ""
+    },
+    {
+      "stage": "mm",
+      "started_utc": "2026-11-04T05:10:13.283856+00:00",
+      "elapsed_seconds": 0.11000000000012733,
+      "command": [
+        "C:\\Users\\HP\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "skills/qlj-security-metrics/resources/mm_construction.py",
+        "--input",
+        "C:\\Users\\HP\\Documents\\ChatGPT\\密码函数指标分析\\release\\qlj-security-metrics-repo\\examples\\mm-4.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"construction\": \"Maiorana-McFarland\",\n  \"h\": 2,\n  \"pi\": [\n    2,\n    0,\n    3,\n    1\n  ],\n  \"g\": [\n    0,\n    1,\n    1,\n    0\n  ],\n  \"coordinates\": \"z=(x<<h)|y; first h variables are x; integer-ascending blocks\",\n  \"function\": {\n    \"n\": 4,\n    \"m\": 1,\n    \"table\": [\n      0,\n      1,\n      1,\n      0,\n      0,\n      1,\n      0,\n      1,\n      1,\n      1,\n      0,\n      0,\n      1,\n      1,\n      1,\n      1\n    ]\n  },\n  \"analysis\": {\n    \"schema_version\": 1,\n    \"verification\": \"exhaustive_finite_table\",\n    \"convention\": \"ascending integer index; x1 MSB; XOR difference; unnormalized Walsh\",\n    \"n\": 4,\n    \"m\": 1,\n    \"input_sha256\": \"bd102356238b00131b19fc9d7c6525cd38d089a3d93225c6cbf73d67ceec0bae\",\n    \"result\": {\n      \"weight\": 10,\n      \"balanced\": false,\n      \"degree\": 2,\n      \"anf_masks\": [\n        1,\n        2,\n        6,\n        8,\n        9\n      ],\n      \"walsh\": [\n        -4,\n        4,\n        -4,\n        4,\n        4,\n        -4,\n        -4,\n        4,\n        4,\n        4,\n        4,\n        4,\n        -4,\n        -4,\n        4,\n        4\n      ],\n      \"nonlinearity\": 6,\n      \"correlation_immunity_order\": 0,\n      \"resiliency_order\": null,\n      \"bent\": true,\n      \"dual_table\": [\n        1,\n        0,\n        1,\n        0,\n        0,\n        1,\n        1,\n        0,\n        0,\n        0,\n        0,\n        0,\n        1,\n        1,\n        0,\n        0\n      ]\n    }\n  },\n  \"certificate\": {\n    \"inverse_pi\": [\n      1,\n      3,\n      0,\n      2\n    ],\n    \"predicted_walsh\": [\n      -4,\n      4,\n      -4,\n      4,\n      4,\n      -4,\n      -4,\n      4,\n      4,\n      4,\n      4,\n      4,\n      -4,\n      -4,\n      4,\n      4\n    ],\n    \"matched\": true\n  },\n  \"scope\": \"finite instance; source theorem provides family proof, not a novelty claim\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "stage": "invalid_mm",
+      "started_utc": "2026-11-04T05:10:13.401802+00:00",
+      "elapsed_seconds": 0.1410000000000764,
+      "command": [
+        "C:\\Users\\HP\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "skills/qlj-security-metrics/resources/mm_construction.py",
+        "--input",
+        "C:\\Users\\HP\\AppData\\Local\\Temp\\qlj-validation-16gb6xgd\\bad.json",
+        "--out",
+        "C:\\Users\\HP\\AppData\\Local\\Temp\\qlj-validation-16gb6xgd\\must-not-exist.json"
+      ],
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "pi must be a permutation of 0..2^h-1\n"
+    }
+  ],
+  "smoke_assertions": {
+    "gold": true,
+    "bent": true,
+    "mm": true,
+    "invalid_mm": true
+  },
+  "limitation": "command evidence and internal hashes; not a signature or full-book proof"
+}

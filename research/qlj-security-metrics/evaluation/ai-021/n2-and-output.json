@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "verification": "exhaustive_finite_table",
+  "convention": "ascending integer index; x1 MSB; XOR difference; unnormalized Walsh",
+  "n": 2,
+  "m": 1,
+  "input_sha256": "9b0a7f910a0d6df1ffa582cfb9bab880e5559cf01f24cb99bf3e7e7ef6ca28bf",
+  "result": {
+    "weight": 1,
+    "balanced": false,
+    "degree": 2,
+    "anf_masks": [
+      3
+    ],
+    "walsh": [
+      2,
+      2,
+      2,
+      -2
+    ],
+    "nonlinearity": 1,
+    "correlation_immunity_order": 0,
+    "resiliency_order": null,
+    "bent": true,
+    "dual_table": [
+      0,
+      0,
+      0,
+      1
+    ],
+    "algebraic_immunity": {
+      "status": "exact",
+      "value": 1,
+      "annihilates": "f",
+      "monomial_masks": [
+        0,
+        2
+      ],
+      "witness_table": [
+        1,
+        1,
+        0,
+        0
+      ],
+      "optimal": true,
+      "method": "two_sided_gf2_rank_search",
+      "rank_checks": [
+        {
+          "degree": 0,
+          "annihilates": "f",
+          "rows": 1,
+          "columns": 1,
+          "rank": 1,
+          "nullity": 0
+        },
+        {
+          "degree": 0,
+          "annihilates": "f+1",
+          "rows": 3,
+          "columns": 1,
+          "rank": 1,
+          "nullity": 0
+        },
+        {
+          "degree": 1,
+          "annihilates": "f",
+          "rows": 1,
+          "columns": 3,
+          "rank": 1,
+          "nullity": 2
+        }
+      ],
+      "minimality": "both sides have full column rank at every lower degree"
+    }
+  },
+  "input": {
+    "n": 2,
+    "m": 1,
+    "table": [
+      0,
+      0,
+      0,
+      1
+    ],
+    "ai": true
+  }
+}

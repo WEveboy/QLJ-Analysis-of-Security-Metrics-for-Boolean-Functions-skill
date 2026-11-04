@@ -1,3 +1,4 @@
+"""Historical 0.1.0 bootstrap generator; do not run over newer documentation."""
 from pathlib import Path
 import json, hashlib
 from build_qlj_bundle import CARDS

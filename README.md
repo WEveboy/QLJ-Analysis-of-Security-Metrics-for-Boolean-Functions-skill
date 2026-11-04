@@ -2,7 +2,7 @@
 
 基于李超、屈龙江、周悦《密码函数的安全性指标分析》（科学出版社，2011），按原“Boolean-vector-research-skill生成”项目的 **cangjie-skill 2.5.0 / RIA-TV++** 流程蒸馏。
 
-**研究初稿0.2.0：1个入口、9张能力卡、Python标准库有限表计算器。** 已进行全书OCR检索、关键页图核对、五视角候选提取、三重验证、路由编译及有限输出测试。全书复杂构造与计数仍有待审项，不称全书定理库已完成。
+**研究初稿0.2.1：1个入口、9张能力卡、Python标准库有限表计算器。** 已进行全书OCR检索、关键页图核对、五视角候选提取、三重验证、路由编译及有限输出测试。全书复杂构造与计数仍有待审项，不称全书定理库已完成。
 
 - [技能入口](skills/qlj-security-metrics/SKILL.md)：表示/ANF、Walsh/NL、二元PN/APN、Bent对偶、方形奇维AB、弹性、标量AI、配对乘积与M-M Bent构造。
 - [精华长文](research/qlj-security-metrics/DIGEST.md) · [全书骨架](research/qlj-security-metrics/BOOK_OVERVIEW.md) · [术语](research/qlj-security-metrics/GLOSSARY.md)
@@ -14,10 +14,16 @@ python skills/qlj-security-metrics/resources/runtime_metrics.py --input examples
 python skills/qlj-security-metrics/resources/runtime_metrics.py --paired-bent 4
 ```
 
-精确AI限n≤6；标量n≤10；向量n≤8、m≤8。仅验证给定有限表，不替代系统安全评估、全族证明或最新研究查新。书中“几乎Bent”为向量AB；向量AI三定义不混用。
+非恒定函数精确AI限n≤6，常函数直接AI0；标量n≤10；向量n≤8、m≤8。仅验证给定有限表，不替代系统安全评估、全族证明或最新研究查新。书中“几乎Bent”为向量AB；向量AI三定义不混用。
 
 原书PDF、页图及全文OCR仅在本地取证，不随仓库分发。原著版权归权利人；未新增许可证。
 本项目由WEveboy提出研究目标与维护；Codex协助蒸馏、工具实现和验证。
 
 
 本轮新增：第4章§4.3（书p113/PDF123）的M-M构造已核条件并实现。f(x,y)=x·π(y)+g(y)，π为h位置换、g任意；1≤h≤5。谱符号证书与有限枚举分别验证；其余PS/Dillon/间接构造仍待审。
+
+## 更新与验证
+
+[更新日志](CHANGELOG.md)记录版本变化。0.2.1增加AI双侧逐度矩阵秩记录，常函数直接返回AI0，能力卡仍为9张。非恒定函数精确AI预算仍为n≤6。
+
+运行`python scripts/validate_release.py --out 新日志.json`，保存测试、完整性检查、CLI正常/负例的命令、退出码、输出、时间与程序指纹；日志路径必须尚不存在。

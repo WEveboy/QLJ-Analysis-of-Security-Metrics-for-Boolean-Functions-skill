@@ -20,11 +20,11 @@ algebraic immunity、AI、MAI、零化子、annihilator；请求向量AI时先�
 
 ## E — Execution
 
-先读resources/usage.md。输入添加ai:true；运行通用命令，读algebraic_immunity的value、annihilates、monomial_masks、witness_table。逐点核g非零、次数符合并且对应乘积全0。n>6输出not_computed，不将缺结果写成0。
+先读resources/usage.md。输入添加ai:true；运行通用命令，读algebraic_immunity的value、annihilates、monomial_masks、witness_table。逐点核g非零、次数符合并且对应乘积全0。rank_checks逐项列degree、annihilates、rows、columns、rank、nullity；所有低于AI的次数应包含两侧满列秩记录。常函数method=constant_function_identity直接以非负次数及常数零化子证明AI0。非恒定函数n>6输出not_computed；已验证常函数直接给AI0，不将缺结果写成0。
 
 ## B — Boundary
 
-精确AI限n≤6。向量分量可逐项算标量AI，但不冒充已实现基本或图形向量AI，也不自动汇总三定义。MAI不保证快速代数攻击安全；本工具不计算FAI。
+非恒定函数精确AI限n≤6；常函数在输入维数预算内直接判AI0。向量分量可逐项算标量AI，但不冒充已实现基本或图形向量AI，也不自动汇总三定义。MAI不保证快速代数攻击安全；本工具不计算FAI。
 
 ## 配套资源
 
