@@ -33,3 +33,5 @@ Bent判定、bent dual、平坦谱、向量Bent；请求生成函数转paired-be
 - [resources/runtime_metrics.py](../../resources/runtime_metrics.py)
 - [resources/test_metrics.py](../../resources/test_metrics.py)
 - [resources/usage.md](../../resources/usage.md)
+- [resources/mm_construction.py](../../resources/mm_construction.py)
+- [resources/test_mm.py](../../resources/test_mm.py)

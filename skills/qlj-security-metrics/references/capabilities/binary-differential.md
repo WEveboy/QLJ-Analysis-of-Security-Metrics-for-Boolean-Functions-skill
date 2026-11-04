@@ -33,3 +33,5 @@ n,m≤8。APN字段仅n=m才给布尔值，非方形给null。原书一般素特
 - [resources/runtime_metrics.py](../../resources/runtime_metrics.py)
 - [resources/test_metrics.py](../../resources/test_metrics.py)
 - [resources/usage.md](../../resources/usage.md)
+- [resources/mm_construction.py](../../resources/mm_construction.py)
+- [resources/test_mm.py](../../resources/test_mm.py)

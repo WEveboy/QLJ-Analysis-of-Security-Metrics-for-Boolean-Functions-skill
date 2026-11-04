@@ -69,16 +69,28 @@ CARDS=[
  '只实现该构造，2≤n≤10且偶数。不能声称覆盖MM/PS/Dillon全族、计数或等价类。奇数n拒绝。相邻配对是变量置换后的同构写法，不能冒充本例印刷式。')
 ]
 
+
+CARDS.append((
+'mm-bent','Maiorana–McFarland Bent构造与谱证书','§4.3 定义4.5、式(4.9)、定理4.9，书p113 / PDF123',
+'其中π是F₂^(n/2)上的置换，g是任意n/2元布尔函数，·表示F₂^(n/2)中向量的内积。（上下标规范排写）',
+'设n=2h，x和y均为h位向量，f(x,y)=x·π(y)+g(y)。π必须是整个半维空间的置换，g任意。对x求字符和，只在π(y)=a时非零，因此W_f(a,b)=2^h(-1)^(b·π^(-1)(a)+g(π^(-1)(a)))。本卡把原书符号证明变成给定有限实例的证书：保存逆置换、预测谱，再与计算器全谱比较。配对乘积是π为恒等且g=0的特例。',
+'合成演练：h=2，π=[2,0,3,1]，g=[0,1,1,0]，构造16项表；全谱幅值4，NL6。穷举h=2的24个置换与16个g共384例均经直接字符和核验。',
+'Maiorana–McFarland、M-M、MM Bent、任意半维置换构造Bent；固定配对乘积使用paired-bent卡，已有表判断用bent-dual卡。',
+'运行python resources/mm_construction.py --input mm.json --out new-mm-result.json。输入h、长度2^h的整数置换pi与同长度0/1表g。坐标z=(x<<h)|y，前h位为x。输出function完整表、analysis、inverse_pi及predicted_walsh；matched必须为true。完成后可将function另存JSON交通用计算器复算。',
+'限定1≤h≤5，n≤10；重复或越界pi、布尔值冒充整数、错误g长度均拒绝。非置换π不满足本构造定理，拒绝不能被解释为所有变体函数都非Bent。并未实现Dillon/PS/间接构造或计数分类。'))
+
 def main():
     for d in ('cards','resources','book'):(B/d).mkdir(parents=True,exist_ok=True)
-    for name in ('runtime_metrics.py','test_metrics.py'):
+    for name in ('runtime_metrics.py','test_metrics.py','mm_construction.py','test_mm.py'):
         shutil.copyfile(BOOK/name,B/'resources'/name)
     usage='''# 执行合同
 Python 3.10+，仅标准库。所有相对命令以技能根目录为工作目录。
 
 python resources/runtime_metrics.py --input spec.json --out new-result.json
 python resources/runtime_metrics.py --paired-bent 4 --out new-bent.json
-python -m unittest discover -s resources -p test_metrics.py -v
+python -m unittest discover -s resources -p "test_*.py" -v
+python resources/mm_construction.py --input mm.json --out new-mm-result.json
+M-M输入：h（1至5）、pi（全置换表）、g（布尔表），n=2h；z=(x<<h)|y。
 
 输入JSON：{"n":3,"m":3,"table":[0,1,3,4,5,6,7,2],"ai":false}。
 table长度2^n，元素严格整数，x1为最高位。m省略时为1。
@@ -95,17 +107,17 @@ table长度2^n，元素严格整数，x1为最高位。m省略时为1。
         (B/'cards'/f'{slug}.md').write_text(text,encoding='utf-8')
         related=[] if slug=='representation' else ['cap.qlj.representation']
         if slug in ('bent-dual','square-almost-bent','resiliency'):related+=['cap.qlj.walsh-nonlinearity']
-        if slug=='paired-bent':related+=['cap.qlj.bent-dual']
+        if slug in ('paired-bent','mm-bent'):related+=['cap.qlj.bent-dual']
         caps.append(dict(capability_id='cap.qlj.'+slug,revision=1,status='active',slug=slug,title=title,
             importance='high',importance_rationale='T01—T11科研任务：统一定义、穷举计算及失败边界，降低条件遗漏。',
             one_liner=interpret.split('。')[0]+'。',intents=[title,trigger],keywords=[slug,title],also_read=related,
             card=f'cards/{slug}.md',frontmatter=dict(description=trigger,tags=['boolean-functions','qlj']),
             source_evidence=[dict(source_id='QLJ2011',version_id='2011-first-edition',location=src)],
-            resources=['resources/runtime_metrics.py','resources/test_metrics.py','resources/usage.md'],
+            resources=['resources/runtime_metrics.py','resources/test_metrics.py','resources/usage.md','resources/mm_construction.py','resources/test_mm.py'],
             promotion=dict(destination='router',gate=dict(independent_intent=True,independent_contract=True,
                 independent_run=False,independent_reuse=True,independent_eval=True),
                 notes='共用输入规格与同一计算器，保持single-first，避免重复发现入口。')))
-    desc='基于李超、屈龙江、周悦《密码函数的安全性指标分析》的科研能力：真值表与ANF、Walsh非线性度、二元差分PN/APN、Bent及对偶、方形奇维AB、相关免疫与弹性、标量AI、配对乘积Bent。用于有限候选复算和条件核对；不执行全族分类或密码系统安全证明。'
+    desc='基于李超、屈龙江、周悦《密码函数的安全性指标分析》的科研能力：真值表与ANF、Walsh非线性度、二元差分PN/APN、Bent及对偶、方形奇维AB、相关免疫与弹性、标量AI、配对乘积与M-M Bent构造。用于有限候选复算和条件核对；不执行全族分类或密码系统安全证明。'
     entry=dict(name='qlj-security-metrics',description=desc,core_principles=[
         '先读resources/usage.md与所需能力卡；输入必须有维数、完整表及位序。',
         '区分B原书事实、D独立实现/合成演练、H未证研究方向；不把有限验证称为全族证明。',
@@ -116,7 +128,7 @@ table长度2^n，元素严格整数，x1为最高位。m省略时为1。
         out_of_scope=['通用代码工程、任意书籍自动蒸馏、无来源的新颖性和系统安全证明。'],
         stop_conditions=['关键域模型或输入规格不足时先补信息；超出预算明确未算。','未核参数构造不进入已证明方法；向量AI先区分三定义，当前只保留参考。'])
     bundle=dict(schema_version=1,bundle_id='bundle.qlj-security-metrics',book=dict(title='密码函数的安全性指标分析',
-        author='李超、屈龙江、周悦',source_pack='qlj-security-metrics-2011',baseline_tag='research-draft-0.1.0'),
+        author='李超、屈龙江、周悦',source_pack='qlj-security-metrics-2011',baseline_tag='research-draft-0.2.0'),
         entry=entry,router_entry=dict(name='qlj-security-metrics-router',description=desc),promotion_budget=2,capabilities=caps)
     (B/'verified.yaml').write_text(yaml.safe_dump(bundle,allow_unicode=True,sort_keys=False),encoding='utf-8')
     shutil.copyfile(BOOK/'BOOK_OVERVIEW.md',B/'book/overview.md')

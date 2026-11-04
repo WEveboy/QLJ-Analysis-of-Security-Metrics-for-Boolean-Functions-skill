@@ -1,8 +1,8 @@
 {
-  "version": "0.1.0",
+  "version": "0.2.0",
   "status": "research-draft",
   "entrypoints": 1,
-  "capabilities": 8,
+  "capabilities": 9,
   "source_year": 2011,
   "source_id": "QLJ2011",
   "runtime_dependencies": "Python >=3.10 standard library",

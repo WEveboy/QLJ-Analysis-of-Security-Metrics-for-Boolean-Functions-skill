@@ -1,0 +1,174 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "cases": [
+    {
+      "name": "permutation-nonlinear-g",
+      "pi": [
+        2,
+        0,
+        3,
+        1
+      ],
+      "g": [
+        0,
+        1,
+        1,
+        0
+      ],
+      "independent_table": [
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "independent_walsh": [
+        -4,
+        4,
+        -4,
+        4,
+        4,
+        -4,
+        -4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        -4,
+        -4,
+        4,
+        4
+      ],
+      "independent_nonlinearity": 6,
+      "exit_code": 0,
+      "stderr": "",
+      "expected_contract_valid": true
+    },
+    {
+      "name": "reverse-and-constant",
+      "pi": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "g": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "independent_table": [
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "independent_walsh": [
+        -4,
+        4,
+        4,
+        -4,
+        -4,
+        -4,
+        4,
+        4,
+        -4,
+        4,
+        -4,
+        4,
+        -4,
+        -4,
+        -4,
+        -4
+      ],
+      "independent_nonlinearity": 6,
+      "exit_code": 0,
+      "stderr": "",
+      "expected_contract_valid": true
+    },
+    {
+      "name": "invalid-repeated-pi",
+      "pi": [
+        0,
+        0,
+        2,
+        3
+      ],
+      "g": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "independent_table": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0
+      ],
+      "independent_walsh": [
+        8,
+        0,
+        8,
+        0,
+        0,
+        0,
+        0,
+        0,
+        4,
+        4,
+        -4,
+        -4,
+        4,
+        -4,
+        -4,
+        4
+      ],
+      "independent_nonlinearity": 4,
+      "exit_code": 2,
+      "stderr": "pi must be a permutation of 0..2^h-1\n",
+      "expected_contract_valid": false
+    }
+  ],
+  "independent_exhaustive_h2_cases": 384,
+  "independent_exhaustive_status": "PASS",
+  "source": "QLJ2011 book p113 / PDF123",
+  "scope": "direct character sums; no runtime module imported"
+}

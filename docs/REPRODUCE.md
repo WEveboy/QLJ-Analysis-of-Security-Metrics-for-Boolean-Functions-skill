@@ -5,7 +5,7 @@ Python 3.10+即可运行已编译技能，不需第三方包。使用：
 ```powershell
 python skills/qlj-security-metrics/resources/runtime_metrics.py --input examples/gold-3.json --out gold-result.json
 python skills/qlj-security-metrics/resources/runtime_metrics.py --paired-bent 4 --out bent-result.json
-python -m unittest discover -s skills/qlj-security-metrics/resources -p test_metrics.py -v
+python -m unittest discover -s skills/qlj-security-metrics/resources -p "test_*.py" -v
 ```
 
 输出路径必须尚不存在。输入字段与预算见技能resources/usage.md。
@@ -22,3 +22,5 @@ python <cangjie-skill>/scripts/validate_skill_pack.py <新输出目录>/qlj-secu
 编译器不会从PDF自动生成方法论；本库的Bundle来自人工/代理提取与核验。
 同一Bundle可确定性生成single产物，时间戳、运行ID等构建元数据会不同。
 源文件PDF及OCR不分发；根据source-manifest.json的SHA256核对本地合法来源。
+
+M-M示例：python skills/qlj-security-metrics/resources/mm_construction.py --input examples/mm-4.json --out mm-new.json

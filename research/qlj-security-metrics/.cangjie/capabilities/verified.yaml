@@ -4,10 +4,11 @@ book:
   title: 密码函数的安全性指标分析
   author: 李超、屈龙江、周悦
   source_pack: qlj-security-metrics-2011
-  baseline_tag: research-draft-0.1.0
+  baseline_tag: research-draft-0.2.0
 entry:
   name: qlj-security-metrics
-  description: 基于李超、屈龙江、周悦《密码函数的安全性指标分析》的科研能力：真值表与ANF、Walsh非线性度、二元差分PN/APN、Bent及对偶、方形奇维AB、相关免疫与弹性、标量AI、配对乘积Bent。用于有限候选复算和条件核对；不执行全族分类或密码系统安全证明。
+  description: 基于李超、屈龙江、周悦《密码函数的安全性指标分析》的科研能力：真值表与ANF、Walsh非线性度、二元差分PN/APN、Bent及对偶、方形奇维AB、相关免疫与弹性、标量AI、配对乘积与M-M
+    Bent构造。用于有限候选复算和条件核对；不执行全族分类或密码系统安全证明。
   core_principles:
   - 先读resources/usage.md与所需能力卡；输入必须有维数、完整表及位序。
   - 区分B原书事实、D独立实现/合成演练、H未证研究方向；不把有限验证称为全族证明。
@@ -22,7 +23,8 @@ entry:
   - 未核参数构造不进入已证明方法；向量AI先区分三定义，当前只保留参考。
 router_entry:
   name: qlj-security-metrics-router
-  description: 基于李超、屈龙江、周悦《密码函数的安全性指标分析》的科研能力：真值表与ANF、Walsh非线性度、二元差分PN/APN、Bent及对偶、方形奇维AB、相关免疫与弹性、标量AI、配对乘积Bent。用于有限候选复算和条件核对；不执行全族分类或密码系统安全证明。
+  description: 基于李超、屈龙江、周悦《密码函数的安全性指标分析》的科研能力：真值表与ANF、Walsh非线性度、二元差分PN/APN、Bent及对偶、方形奇维AB、相关免疫与弹性、标量AI、配对乘积与M-M
+    Bent构造。用于有限候选复算和条件核对；不执行全族分类或密码系统安全证明。
 promotion_budget: 2
 capabilities:
 - capability_id: cap.qlj.representation
@@ -54,6 +56,8 @@ capabilities:
   - resources/runtime_metrics.py
   - resources/test_metrics.py
   - resources/usage.md
+  - resources/mm_construction.py
+  - resources/test_mm.py
   promotion:
     destination: router
     gate:
@@ -93,6 +97,8 @@ capabilities:
   - resources/runtime_metrics.py
   - resources/test_metrics.py
   - resources/usage.md
+  - resources/mm_construction.py
+  - resources/test_mm.py
   promotion:
     destination: router
     gate:
@@ -132,6 +138,8 @@ capabilities:
   - resources/runtime_metrics.py
   - resources/test_metrics.py
   - resources/usage.md
+  - resources/mm_construction.py
+  - resources/test_mm.py
   promotion:
     destination: router
     gate:
@@ -172,6 +180,8 @@ capabilities:
   - resources/runtime_metrics.py
   - resources/test_metrics.py
   - resources/usage.md
+  - resources/mm_construction.py
+  - resources/test_mm.py
   promotion:
     destination: router
     gate:
@@ -212,6 +222,8 @@ capabilities:
   - resources/runtime_metrics.py
   - resources/test_metrics.py
   - resources/usage.md
+  - resources/mm_construction.py
+  - resources/test_mm.py
   promotion:
     destination: router
     gate:
@@ -252,6 +264,8 @@ capabilities:
   - resources/runtime_metrics.py
   - resources/test_metrics.py
   - resources/usage.md
+  - resources/mm_construction.py
+  - resources/test_mm.py
   promotion:
     destination: router
     gate:
@@ -291,6 +305,8 @@ capabilities:
   - resources/runtime_metrics.py
   - resources/test_metrics.py
   - resources/usage.md
+  - resources/mm_construction.py
+  - resources/test_mm.py
   promotion:
     destination: router
     gate:
@@ -331,6 +347,50 @@ capabilities:
   - resources/runtime_metrics.py
   - resources/test_metrics.py
   - resources/usage.md
+  - resources/mm_construction.py
+  - resources/test_mm.py
+  promotion:
+    destination: router
+    gate:
+      independent_intent: true
+      independent_contract: true
+      independent_run: false
+      independent_reuse: true
+      independent_eval: true
+    notes: 共用输入规格与同一计算器，保持single-first，避免重复发现入口。
+- capability_id: cap.qlj.mm-bent
+  revision: 1
+  status: active
+  slug: mm-bent
+  title: Maiorana–McFarland Bent构造与谱证书
+  importance: high
+  importance_rationale: T01—T11科研任务：统一定义、穷举计算及失败边界，降低条件遗漏。
+  one_liner: 设n=2h，x和y均为h位向量，f(x,y)=x·π(y)+g(y)。
+  intents:
+  - Maiorana–McFarland Bent构造与谱证书
+  - Maiorana–McFarland、M-M、MM Bent、任意半维置换构造Bent；固定配对乘积使用paired-bent卡，已有表判断用bent-dual卡。
+  keywords:
+  - mm-bent
+  - Maiorana–McFarland Bent构造与谱证书
+  also_read:
+  - cap.qlj.representation
+  - cap.qlj.bent-dual
+  card: cards/mm-bent.md
+  frontmatter:
+    description: Maiorana–McFarland、M-M、MM Bent、任意半维置换构造Bent；固定配对乘积使用paired-bent卡，已有表判断用bent-dual卡。
+    tags:
+    - boolean-functions
+    - qlj
+  source_evidence:
+  - source_id: QLJ2011
+    version_id: 2011-first-edition
+    location: §4.3 定义4.5、式(4.9)、定理4.9，书p113 / PDF123
+  resources:
+  - resources/runtime_metrics.py
+  - resources/test_metrics.py
+  - resources/usage.md
+  - resources/mm_construction.py
+  - resources/test_mm.py
   promotion:
     destination: router
     gate:

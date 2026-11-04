@@ -10,3 +10,4 @@
 | cap.qlj.resiliency | 相关免疫与弹性谱检测 | high | 相关免疫与弹性谱检测；相关免疫、correlation immunity、resiliency、弹性阶、均匀投影；构造与计数另属待审参考。 | resiliency、相关免疫与弹性谱检测 | capabilities/resiliency.md |
 | cap.qlj.scalar-ai | 标量代数免疫度与非零零化子证书 | high | 标量代数免疫度与非零零化子证书；algebraic immunity、AI、MAI、零化子、annihilator；请求向量AI时先辨三定义，当前不计算。 | scalar-ai、标量代数免疫度与非零零化子证书 | capabilities/scalar-ai.md |
 | cap.qlj.paired-bent | 配对乘积Bent构造及复算 | high | 配对乘积Bent构造及复算；构造Bent、paired product、例4.1、生成偶数维Bent；已有表的判定用bent-dual卡。 | paired-bent、配对乘积Bent构造及复算 | capabilities/paired-bent.md |
+| cap.qlj.mm-bent | Maiorana–McFarland Bent构造与谱证书 | high | Maiorana–McFarland Bent构造与谱证书；Maiorana–McFarland、M-M、MM Bent、任意半维置换构造Bent；固定配对乘积使用paired-bent卡，已有表判断用bent-dual卡。 | mm-bent、Maiorana–McFarland Bent构造与谱证书 | capabilities/mm-bent.md |

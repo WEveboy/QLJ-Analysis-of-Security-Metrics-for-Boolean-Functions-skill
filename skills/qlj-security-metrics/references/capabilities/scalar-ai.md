@@ -33,3 +33,5 @@ algebraic immunity、AI、MAI、零化子、annihilator；请求向量AI时先�
 - [resources/runtime_metrics.py](../../resources/runtime_metrics.py)
 - [resources/test_metrics.py](../../resources/test_metrics.py)
 - [resources/usage.md](../../resources/usage.md)
+- [resources/mm_construction.py](../../resources/mm_construction.py)
+- [resources/test_mm.py](../../resources/test_mm.py)

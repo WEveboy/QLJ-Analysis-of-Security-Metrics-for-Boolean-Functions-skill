@@ -1,0 +1,127 @@
+{
+  "construction": "Maiorana-McFarland",
+  "h": 2,
+  "pi": [
+    2,
+    0,
+    3,
+    1
+  ],
+  "g": [
+    0,
+    1,
+    1,
+    0
+  ],
+  "coordinates": "z=(x<<h)|y; first h variables are x; integer-ascending blocks",
+  "function": {
+    "n": 4,
+    "m": 1,
+    "table": [
+      0,
+      1,
+      1,
+      0,
+      0,
+      1,
+      0,
+      1,
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  "analysis": {
+    "schema_version": 1,
+    "verification": "exhaustive_finite_table",
+    "convention": "ascending integer index; x1 MSB; XOR difference; unnormalized Walsh",
+    "n": 4,
+    "m": 1,
+    "input_sha256": "bd102356238b00131b19fc9d7c6525cd38d089a3d93225c6cbf73d67ceec0bae",
+    "result": {
+      "weight": 10,
+      "balanced": false,
+      "degree": 2,
+      "anf_masks": [
+        1,
+        2,
+        6,
+        8,
+        9
+      ],
+      "walsh": [
+        -4,
+        4,
+        -4,
+        4,
+        4,
+        -4,
+        -4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        -4,
+        -4,
+        4,
+        4
+      ],
+      "nonlinearity": 6,
+      "correlation_immunity_order": 0,
+      "resiliency_order": null,
+      "bent": true,
+      "dual_table": [
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0
+      ]
+    }
+  },
+  "certificate": {
+    "inverse_pi": [
+      1,
+      3,
+      0,
+      2
+    ],
+    "predicted_walsh": [
+      -4,
+      4,
+      -4,
+      4,
+      4,
+      -4,
+      -4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      -4,
+      -4,
+      4,
+      4
+    ],
+    "matched": true
+  },
+  "scope": "finite instance; source theorem provides family proof, not a novelty claim"
+}

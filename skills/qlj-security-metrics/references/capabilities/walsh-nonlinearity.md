@@ -33,3 +33,5 @@ Walsh spectrum、nonlinearity、最大线性偏差、平衡性、全分量谱。
 - [resources/runtime_metrics.py](../../resources/runtime_metrics.py)
 - [resources/test_metrics.py](../../resources/test_metrics.py)
 - [resources/usage.md](../../resources/usage.md)
+- [resources/mm_construction.py](../../resources/mm_construction.py)
+- [resources/test_mm.py](../../resources/test_mm.py)

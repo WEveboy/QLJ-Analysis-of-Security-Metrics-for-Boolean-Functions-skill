@@ -1,12 +1,12 @@
 ---
 name: qlj-security-metrics
 description: |
-  基于李超、屈龙江、周悦《密码函数的安全性指标分析》的科研能力：真值表与ANF、Walsh非线性度、二元差分PN/APN、Bent及对偶、方形奇维AB、相关免疫与弹性、标量AI、配对乘积Bent。用于有限候选复算和条件核对；不执行全族分类或密码系统安全证明。
+  基于李超、屈龙江、周悦《密码函数的安全性指标分析》的科研能力：真值表与ANF、Walsh非线性度、二元差分PN/APN、Bent及对偶、方形奇维AB、相关免疫与弹性、标量AI、配对乘积与M-M Bent构造。用于有限候选复算和条件核对；不执行全族分类或密码系统安全证明。
 metadata:
   cangjie.generated-by: cangjie-tools v2.5.0
   cangjie.variant: single
   cangjie.bundle-id: bundle.qlj-security-metrics
-  cangjie.capability-count: 8
+  cangjie.capability-count: 9
   cangjie.entrypoint-count: 1
 ---
 # 密码函数的安全性指标分析 — 全书能力入口
@@ -38,6 +38,7 @@ metadata:
 | 相关免疫与弹性谱检测；相关免疫、correlation immunity、resiliency、弹性阶、均匀投影；构造与计数另属待审参考。 | references/capabilities/resiliency.md | references/capabilities/representation.md、references/capabilities/walsh-nonlinearity.md |
 | 标量代数免疫度与非零零化子证书；algebraic immunity、AI、MAI、零化子、annihilator；请求向量AI时先辨三定义，当前不计算。 | references/capabilities/scalar-ai.md | references/capabilities/representation.md |
 | 配对乘积Bent构造及复算；构造Bent、paired product、例4.1、生成偶数维Bent；已有表的判定用bent-dual卡。 | references/capabilities/paired-bent.md | references/capabilities/representation.md、references/capabilities/bent-dual.md |
+| Maiorana–McFarland Bent构造与谱证书；Maiorana–McFarland、M-M、MM Bent、任意半维置换构造Bent；固定配对乘积使用paired-bent卡，已有表判断用bent-dual卡。 | references/capabilities/mm-bent.md | references/capabilities/representation.md、references/capabilities/bent-dual.md |
 
 **非能力类查询**：
 - 书名/作者/章节/整书概览 → references/overview.md

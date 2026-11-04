@@ -1,0 +1,6 @@
+  skill: .staging-run-20261104-125141-3c9ac0-qlj-security-metrics   59 行    4878 字节
+
+共扫描 15 个 .md，其中 1 个 SKILL.md
+WARN  [name-dir] skills\.staging-run-20261104-125141-3c9ac0-qlj-security-metrics\SKILL.md: name `qlj-security-metrics` 与目录名 `.staging-run-20261104-125141-3c9ac0-qlj-security-metrics` 不一致
+
+结果: 0 errors, 1 warnings

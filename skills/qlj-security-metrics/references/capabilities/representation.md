@@ -33,3 +33,5 @@ n≤10；向量n≤8,m≤8。布尔值、越界值、错误长度拒绝。域多
 - [resources/runtime_metrics.py](../../resources/runtime_metrics.py)
 - [resources/test_metrics.py](../../resources/test_metrics.py)
 - [resources/usage.md](../../resources/usage.md)
+- [resources/mm_construction.py](../../resources/mm_construction.py)
+- [resources/test_mm.py](../../resources/test_mm.py)
